@@ -26,9 +26,11 @@
 %% Objet :  Création de tableaux (signes et variations)
 %<----------------------------------------------------------------------------->
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{tkz-tab}[2011/04/17 v1.4c  variations  (ctan  version)  ]
+\ProvidesPackage{tkz-tab}[2018/09/19 v1.4d  variations  (ctan  version)  ]
 %<----------------------------------------------------------------------------->
-\RequirePackage{etex}
+\ifx\e@alloc\@undefined
+  \RequirePackage{etex}
+\fi
 \RequirePackage{ifthen}
 \RequirePackage{xkeyval}[2005/11/25]
 \RequirePackage{tikz}[2008/01/15]
