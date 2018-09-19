@@ -1,0 +1,107 @@
+%!TEX root = /Users/ego/Boulot/TKZ/tkz-tab/doc/TKZdoc-tab-main.tex 
+% 20 / 02 /2009 v1.00c TKZdoc-tab-install
+\section{Installation}
+Il est possible que lorsque vous lirez ce document, \tkzname{tkz-tab} soit présent sur le serveur du \tkzname{CTAN}\footnote{\tkzname{tkz-tab} ne fait pas encore partie de \tkzname{TeXLive} mais il sera bientôt possible de l'installer avec \emph{tlmgr}}.  Si   \tkzname{tkz-tab} ne fait pas encore partie de votre distribution, ce chapitre vous montre comment l'installer. 
+
+\subsection{Avec TeXLive sous OS X, Linux et Windows}\NameDist{TeXLive}
+Créer un dossier \tikz[remember picture,baseline=(n1.base)]\node [fill=green!50,draw] (n1) {prof};  avec comme chemin : \colorbox{blue!50}{ texmf/tex/latex/prof}.
+
+ \colorbox{blue!50}{texmf} est un dossier personnel, voici les chemins de ce dossier sur mes deux ordinateurs:
+
+\medskip
+\begin{itemize}\setlength{\itemsep}{10pt}
+
+\item   sous OS X\NameSys{OS X} \colorbox{blue!30}{\textbf{/Users/ego/Library/texmf}}; 
+
+\item   sous Ubuntu\NameSys{Linux Ubuntu} \colorbox{blue!30}{\textbf{/home/ego/texmf}};
+
+\item sous Windows je ne connais pas cette distribution sous ce système mais je suppose que l'installation doit ressembler à ce qui se passe sous Linux et OS X.
+\end{itemize}
+
+\medskip
+\begin{enumerate}
+\item Placez \tikz[remember picture,baseline=(n2.base)]\node [fill=orange,draw] (n2) {tkz-tab.sty}; dans le dossier \colorbox{green!50}{prof}.
+\item Ouvrir un terminal, puis faire \colorbox{red!50}{|sudo texhash|}
+\item Vérifier que \tkzname{xkeyval}\index{xkeyval} version 2.5 minimum et \tkzname{Ti\emph{k}Z 2.00}\index{TikZ@Ti\emph{k}Z} sont installés car ils sont obligatoires, pour le bon fonctionnement de tkz-tab.
+\end{enumerate}
+Mon dossier texmf est structuré ainsi : \emph{Attention, la présence dans mon dossier texmf, des fichiers de \PGF, s'explique par l'utilisation de la version CVS de \PGF}.
+
+\medskip
+\begin{tikzpicture} [remember picture,rotate=90] 
+
+\node (texmf)   at (4,2)  [draw,fill=blue!30 ] {texmf};
+
+\node (tex)     at (6,0)   [draw ] {tex}; 
+\node (doc)     at (0,0)   [draw ] {doc};
+
+\node (generic) at (7,-4)  [draw ] {generic};
+\node (docgen)  at (0,-4)  [draw ] {generic};
+
+\node (latex)   at (4,-4)  [draw ] {latex}; 
+
+\node (pgf1)     at (7,-7)  [draw,fill=orange] {pgf};
+
+\node (pgf2)    at (5,-7)  [draw,fill=orange] {pgf};
+\node (prof)    at (4,-7)  [draw,fill=green ] {{prof}};
+\node (etc)     at (3,-7)  [draw ] {etc...}; 
+\node (dpgf)     at (0,-7)  [draw,fill=orange] {pgf};
+
+\node (qcm)     at (7,-11)  [draw,fill=green ] {alterqcm.sty};
+\node (fonc)    at (6,-11)  [draw,fill=orange] {tkz-graph.sty};
+\node (esp)     at (5,-11)  [draw,fill=orange] {tkz-berge.sty};
+\node (tab)     at (4,-11)  [draw,fill=orange] {tkz-tab.sty};
+\node (tuk)     at (3,-11)  [draw,fill=orange] {tkz-tukey.sty};
+\node (base)    at (2,-11)  [draw,fill=orange] {tkz-base.sty};
+\node (gra)     at (1,-11)  [draw,fill=orange] {tkz-fct.sty};
+
+\draw (doc.west)        |- (4, 1);
+\draw (tex.west)        |- (4, 1);
+
+\draw (latex.west)      |- (6,-2);
+\draw (generic.west)    |- (6,-2);
+
+\draw (pgf2.west)       |- (4,-6);
+\draw (prof.west)       |- (4,-6);
+\draw (etc.west)        |- (4,-6);
+
+\draw (qcm.west)        |- (4,-9);
+\draw (fonc.west)       |- (6,-9);
+\draw (esp.west)        |- (5,-9);
+\draw (tuk.west)        |- (4,-9);
+\draw (tab.west)        |- (3,-9);
+\draw (base.west)       |- (2,-9);
+\draw (gra.west)        |- (4,-9);
+
+
+\draw[-open triangle 90] (pgf1.west)     --  (generic.east);
+\draw[-open triangle 90] (4,1)          --  (texmf.east);
+\draw[-open triangle 90] (6,-2)         --  (tex.east);
+\draw[-open triangle 90] (4,-6)         --  (latex.east);
+\draw[-open triangle 90] (4,-9)         --  (prof.east);
+\draw[-open triangle 90] (dpgf.west)    --  (docgen.east);
+\draw[-open triangle 90] (docgen.west)  --  (doc.east);
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture,overlay]
+        \path[->,thin,red,>=latex] (n1) edge [bend left] (latex);
+        \path[->,thin,red,>=latex] (n2) edge [bend left] (prof);
+\end{tikzpicture}
+
+\subsection{Avec MikTeX sous Windows XP}\NameDist{MikTeX}\NameSys{Windows XP}
+
+Je ne connais pas grand-chose à ce système mais un utilisateur de mes packages \textbf{Wolfgang Buechel} a eu la gentillesse de me faire parvenir ce qui suit~:
+
+Pour ajouter \tkzname{tkz-tab.sty} à MiKTeX\footnote{Essai réalisé avec la version \tkzname{2.7}}:
+
+\begin{itemize}\setlength{\itemsep}{10pt}
+  \item ajouter un dossier \tkzname{prof} dans le dossier
+       \colorbox{blue!30}{\texttt{[MiKTeX-dir]/latex/tex}}
+  \item copier \tkzname{tkz-tab.sty} dans ce dossier,
+  \item mettre à jour  MiKTeX, pour cela dans shell DOS lancer la commande   \colorbox{red!50}{|mktexlsr -u|} 
+  
+   ou bien encore, choisir \colorbox{red!50}{|Start/Programs/Miktex/Settings/General|}
+   
+    puis appuyer sur le bouton  \colorbox{red!50}{|Refresh FNDB|}.
+\end{itemize}
+
+\vfill

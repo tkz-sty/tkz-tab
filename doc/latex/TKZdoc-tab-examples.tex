@@ -1,0 +1,451 @@
+% 24 / 02 /2009 v1.00c TKZdoc-tab-examples
+\section{Galerie}
+\subsection{Tableaux de signes}
+L'exemple suivant provient de la documentation de l'excellent \tkzname{tablor.sty}.
+Voici le code complet 
+
+\medskip
+\begin{center}
+\begin{tkzexample}[code only]
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ifthen,fp}
+\usepackage{tikz,tkz-tab}
+\usepackage{amsmath,amssymb}
+\usepackage[frenchb]{babel}
+
+\begin{document}
+\begin{tikzpicture}
+  \tkzTabInit[lgt=3]
+     {$x$                                  /1,
+      Signe de\\ $-2+3$                    /1.5,
+      Signe de\\ $-x+5$                    /1.5,
+      Signe de\\ $(-2x+3)(-x+5)$           /1.5 }%
+     {$-\infty$,$\dfrac{3}{2}$,$5$,$+\infty$}%
+  \tkzTabLine { ,+,z,-,t,-, }
+  \tkzTabLine { ,+,t,+,z,-, }
+  \tkzTabLine { ,+,z,-,z,+, }
+\end{tikzpicture}
+\end{document}
+\end{tkzexample}
+\end{center}
+
+\begin{tikzpicture}
+  \tkzTabInit[lgt=3]
+     {$x$                                  /1,
+      Signe de\\ $-2+3$                    /1.5,
+      Signe de\\ $-x+5$                    /1.5,
+      Signe de\\ $(-2x+3)(-x+5)$           /1.5 }%
+     {$-\infty$,$\dfrac{3}{2}$,$5$,$+\infty$}%
+  \tkzTabLine { ,+,z,-,t,-, }
+  \tkzTabLine { ,+,t,+,z,-, }
+  \tkzTabLine { ,+,z,-,z,+, }
+\end{tikzpicture}
+ 
+
+Quelques remarques sur ce code. Le codage utilisé n'a pas d'importance, si vous préférez \tkzname{latin1}, alors remplacez  \tkzname{utf8} par \tkzname{latin1}, bien évidemment  \tkzname{tkz-tab} est essentielle. Si vous utilisez \tkzname{fourier} alors vous pouvez supprimer   \tkzcname{usepackage[T1]\{fontenc\}} et \tkzcname{usepackage\{ammsymb\}}.
+
+\subsection{Variations de fonctions}
+ \subsubsection{Variation d'une fonction rationnelle}
+ 
+ Cet exemple a été cité dans la documentation du package \tkzname{tabvar}
+
+ Étude de la fonction $f~:~ x \longmapsto \frac{x^3+2}{2x}$ sur $]-\infty~;~+\infty[$
+ 
+\begin{tkzexample}[vbox,small]
+\begin{tikzpicture}
+  \tkzTabInit[]
+  {$x$  /1, $f'(x)$ /1,$f$  /3}
+  {$-\infty$ , $0$ , $1$ , $+\infty$}
+\tkzTabLine{,-,d,-,z,+,}
+\tkzTabVar{+/$+\infty$ ,-D+/$-\infty$ / $+\infty$ ,-/$\frac{3}{2}$, +/$+\infty$}
+\tkzTabVal{1}{2}{0.4}{$ -\sqrt[3]{2}$}{$0$}
+\end{tikzpicture}
+\end{tkzexample}  
+
+
+\subsubsection{Variation d'une fonction irrationnelle}
+ 
+Autre exemple  cité dans la documentation du package \tkzname{tabvar}
+
+Étude de la fonction $f~:~ x \longmapsto \sqrt{\frac{x-1}{x+1}}$ sur $]-\infty~;~-1[\cup ]1~;~+\infty[$
+
+\begin{tkzexample}[vbox,small] 
+\begin{tikzpicture}
+  \tkzTabInit[]
+  {$x$  /1, $f'(x)$ /1,$f$  /3}
+  {$-\infty$ , $-1$ , $1$ , $+\infty$}
+\tkzTabLine{,+,d,h,d,+, }
+\tkzTabSlope{ 3/ /+\infty}
+\tkzTabVar{-/$1$ ,+DH/$+\infty$  ,-/$0$, +/$1$}
+\end{tikzpicture}
+\end{tkzexample}  
+
+Un prolongement par continuité pourrait être : $f(x)=0$ sur $[-1~;~1]$ alors le tableau deviendrait
+
+\begin{tkzexample}[vbox,small] 
+\begin{tikzpicture}
+  \tkzTabInit[]
+  {$x$  /1, $f'(x)$ /1,$f$  /3}
+  {$-\infty$ , $-1$ , $1$ , $+\infty$}
+\tkzTabLine{,+,d,0,d,+, }
+\tkzTabSlope{ 3/ /+\infty}
+\tkzTabVar{-/$1$ ,+D-/$+\infty$/$0$  ,-/$0$, +/$1$}
+\end{tikzpicture}
+\end{tkzexample}  
+
+
+\subsection{Fonctions trigonométriques}
+\NameFonct{Fonctions trigonométriques}
+ \subsubsection{Variation de la fonction tangente}
+  \NameFonct{Fonction  tangente}
+ Étude de la fonction $f~:~ x \longmapsto \tan{x}$ sur $[0~;\pi]$
+ 
+ \begin{tkzexample}[vbox]
+\begin{tikzpicture}
+\tkzTabInit[espcl=6]{$x$ / 1,Signe de\\f'(x)/1, Variations de\\ $f$ / 3}%
+     {$0$ ,$\frac{\pi}{2}$ , $\pi$}%
+\tkzTabLine{ ,+,d,+, }
+\tkzTabVar{-/$0$ ,  +D-/$+\infty$/$-\infty$  , +/$0$ }
+\tkzTabVal{1}{2}{0.5}{$\frac{\pi}{4}$}{$1$}
+\tkzTabVal{2}{3}{0.5}{$\frac{3\pi}{4}$}{$1$}
+\end{tikzpicture}
+\end{tkzexample}  
+
+\subsubsection{Variation de la fonction cosinus}
+ \NameFonct{Fonction  cosinus}
+  Étude de la fonction $f~:~ x \longmapsto \cos{x}$ sur $[-\pi~;~+\pi]$
+  
+ \begin{tkzexample}[vbox]
+\begin{tikzpicture}
+\tkzTabInit[espcl=6]{$x$ / 1,Signe de\\f'(x)/1, Variations de\\ $f$ / 3}%
+     {$0$ , $\pi$}%
+\tkzTabLine{ , + , }
+\tkzTabVar{+/$1$ ,   -/$-1$ }
+\tkzTabVal{1}{2}{0.5}{$\frac{\pi}{2}$}{$0$}
+\end{tikzpicture}
+\end{tkzexample}  
+
+\subsection{Fonctions paramétrées et trigonométriques}
+\NameFonct{Fonctions paramétrées} \NameFonct{Fonctions trigonométriques}
+
+Étude sur $\left[0~;~\frac{\pi}{2}\right]$
+ \begin{equation*} 
+\left\{%
+\begin{array}{l} 
+ x(t) = \cos(3t)\\ 
+ y(t) = \sin(4t)
+\end{array}\right. 
+\end{equation*} 
+
+\begin{tkzexample}[vbox,small]
+  \begin{tikzpicture}
+  \tkzTabInit[ lgt=3 , espcl=3]%
+    {$t$                               /1,
+    Signe de\\        $x'(t)$          /1.5,
+    Variations de\\   $x$              /3,
+     Variations de\\  $y$              /3,
+    Signe de\\        $y'(t)$          /1.5}
+              {$0$   , $\frac{\pi}{8}$             , $\frac{\pi}{3}$ ,
+               $\frac{3\pi}{8}$ , $\frac{\pi}{2}$ }%
+  \tkzTabLine {z , - ,-3\sin\left(\frac{3\pi}{8}\right) , - , z , +  ,%
+   3\sin\left(\frac{\pi}{8}\right),+,3}
+   \tkzTabVar  { +/$1$ , R/    , -/$-1$/ , R/     , +/$0$ }
+    \tkzTabIma{1}{3}{2}{$\cos\left(\frac{3\pi}{8}\right)$} 
+   \tkzTabIma{3}{5}{4}{$-\cos\left(\frac{\pi}{8}\right)$} 
+     \tkzTabVar  { -/$0$ , +/$1$ , R/      , -/$-1$ , +/$0$ }
+   \tkzTabIma{2}{4}{3}{$\frac{-\sqrt{3}}{2}$} 
+   \tkzTabLine {4 , + , z , - , -2 , - ,  z ,+,4}
+ \end{tikzpicture}
+\end{tkzexample}
+
+
+\subsection{Baccalauréat Asie ES 1998}
+\index{Baccalauréat}
+Une petite astuce, en principe \tkzname{z}  est le symbole à mettre dans la liste pour obtenir un zéro centré sur un trait en pointillés. Si on veut que le zéro soit sans le trait , il suffit de remplacer \tkzname{z} par \tkzname{0}. Celui-ci n'est pas un symbole reconnu, il est donc traiter comme une chaîne normale.
+
+  Soit $f$ la fonction de variable réelle $x$, définie sur $\mathbf{R}$ par :
+  \[
+      f(x)=\E^x(\E^x+a)+b
+  \]
+  où $a$ et $b$ sont deux constantes réelles.
+
+  Les renseignements connus sur $f$ sont donnés dans le tableau de variation ci-dessous.
+   
+  \medskip
+  \begin{center}
+    \begin{tikzpicture}
+    \tkzTab[lgt=3,espcl=4]{$x$/1,Signe de $f'(x)$ /1,Variations de $f$ /2}%
+    {$-\infty$,$0$,$+\infty$}%
+    {,, z ,,}%
+     {+/    $-3$  ,
+      -/          ,
+      +/          } 
+    \end{tikzpicture}
+  \end{center}
+
+  \medskip
+  \begin{enumerate}
+      \item Calculer $f'(x)$ en fonction de $a$ ($f'$ désigne la fonction dérivée de $f$).
+      \item \begin{enumerate}
+             \item déterminer $a$ et $b$ en vous aidant des informations contenues dans le
+              tableau ci-dessus.
+             \item Calculer $f(0)$ et calculer la limite de $f$ en $+\infty$.
+             \item Compléter, après l'avoir reproduit, le tableau de variations de $f$.
+             \end{enumerate}
+      \item Résoudre dans $\mathbf{R}$ l'équation 
+      \[
+          \E^x(\E^x-2)-3=0
+      \]
+      (on pourra pose $X=\E^x$).
+      \item Résoudre dans $\mathbf{R}$ les inéquations : 
+      \[
+          \E^x(\E^x-2)-3\geq -4
+      \]
+      \[
+          \E^x(\E^x-2)-3 \leq 0
+      \]
+       (On utilisera le tableau de variations donné ci-dessus et en particulier les
+        informations obtenues en 2.b)
+  \end{enumerate}
+
+\begin{tkzexample}[code only,small]
+  Soit $f$ la fonction de variable réelle $x$, définie sur $\mathbf{R}$ par :
+  \[
+      f(x)=\E^x(\E^x+a)+b
+  \]
+  où $a$ et $b$ sont deux constantes réelles.
+
+  Les renseignements connus sur $f$ sont donnés dans le tableau de variation ci-dessous.
+   
+  \medskip
+  \begin{center}
+    \begin{tikzpicture}
+    \tkzTab[lgt=3,espcl=4]{$x$/1,Signe de $f'(x)$ /1,Variations de $f$ /2}%
+    {$-\infty$,$0$,$+\infty$}%
+    {,, z ,,}%
+     {+/    $-3$  ,
+      -/          ,
+      +/          } 
+    \end{tikzpicture}
+  \end{center}
+
+  \medskip
+  \begin{enumerate}
+      \item Calculer $f'(x)$ en fonction de $a$ ($f'$ désigne la fonction dérivée de $f$).
+      \item \begin{enumerate}
+             \item déterminer $a$ et $b$ en vous aidant des informations contenues dans le
+              tableau ci-dessus.
+             \item Calculer $f(0)$ et calculer la limite de $f$ en $+\infty$.
+             \item Compléter, après l'avoir reproduit, le tableau de variations de $f$.
+             \end{enumerate}
+      \item Résoudre dans $\mathbf{R}$ l'équation 
+      \[
+          \E^x(\E^x-2)-3=0
+      \]
+      (on pourra pose $X=\E^x$).
+      \item Résoudre dans $\mathbf{R}$ les inéquations : 
+      \[
+          \E^x(\E^x-2)-3\geq -4
+      \]
+      \[
+          \E^x(\E^x-2)-3 \leq 0
+      \]
+       (On utilisera le tableau de variations donné ci-dessus et en particulier les
+        informations obtenues en 2.b)
+  \end{enumerate}
+\end{tkzexample}
+
+
+\subsection{Baccalauréat}
+\index{Baccalauréat}
+	On considère la fonction $f$ définie sur $]-\infty~;~0[$ :
+
+	\[
+	  f(x)=ax+b+\ln(-2x)
+	\]
+	où $a$ et $b$ sont deux réels donnés.
+
+	\begin{enumerate}
+	\item Calculer $f'(x)$ en fonction de $a$ et $b$.
+	\item Le tableau ci-dessous représente les variations d'une fonction particulière $f$.
+
+	\medskip
+	\begin{center}
+	  \begin{tikzpicture}
+	  \tkzTab[]%
+	  {$x$/1.25,Signe de\\ $f'(x)$/1.5, Variations\\ de $f$/1.5}%
+	  {$-\infty$,$\dfrac{-1}{2}$,$0$}%
+	  {,+,$0$,-,}%
+	  {-//,
+	  +/$2$/,
+	  -//}
+	  \end{tikzpicture}
+	\end{center}
+
+	\medskip
+	\begin{enumerate}
+	\item En utilisant les données du tableau déterminer les valeurs $a$ et $b$ qui caractérisent
+	 cette fonction.
+	\item Pour cette fonction particulière $f$, déterminer 
+	        $\displaystyle \lim_{x \xrightarrow[x<0]{} 0} f(x)$.
+	\item Montrer que, dans l'intervalle $\Big[\dfrac{-1}{2}~;~0,01\Big]$, l'équation $f(x)=0$
+	 admet une solution unique. En donner une valeur approchée à $10^{-3}$ près.
+	\end{enumerate}
+	\end{enumerate}
+	
+\begin{tkzexample}[small,code only]
+	On considère la fonction $f$ définie sur $]-\infty~;~0[$ :
+
+	\[
+	  f(x)=ax+b+\ln(-2x)
+	\]
+	où $a$ et $b$ sont deux réels donnés.
+
+	\begin{enumerate}
+	\item Calculer $f'(x)$ en fonction de $a$ et $b$.
+	\item Le tableau ci-dessous représente les variations d'une fonction particulière $f$.
+
+	\medskip
+	\begin{center}
+	  \begin{tikzpicture}
+	  \tkzTab[]%
+	  {$x$/1.25,Signe de\\ $f'(x)$/1.5, Variations\\ de $f$/1.5}%
+	  {$-\infty$,$\dfrac{-1}{2}$,$0$}%
+	  {,+,$0$,-,}%
+	  {-//,
+	  +/$2$/,
+	  -//}
+	  \end{tikzpicture}
+	\end{center}
+
+	\medskip
+	\begin{enumerate}
+	\item En utilisant les données du tableau déterminer les valeurs $a$ et $b$ qui caractérisent
+	 cette fonction.
+	\item Pour cette fonction particulière $f$, déterminer 
+	        $\displaystyle \lim_{x \xrightarrow[x<0]{} 0} f(x)$.
+	\item Montrer que, dans l'intervalle $\Big[\dfrac{-1}{2}~;~0,01\Big]$, l'équation $f(x)=0$
+	 admet une solution unique. En donner une valeur approchée à $10^{-3}$ près.
+	\end{enumerate}
+	\end{enumerate}
+\end{tkzexample}
+
+
+
+\subsection{Baccalauréat Guyane ES 1998 }
+\index{Baccalauréat}
+C'est cet exemple qui m'a obligé à penser aux   commandes du style $+V+$. Sans doute, voulait-on ne pas influencer les élèves avec la vision d'une double barre (trop souvent associée à la présence d'une asymptote).
+
+\textbf{Le sujet :}
+
+{\parindent=0pt
+On considère une fonction $f$ de la variable $x$, dont on donne le tableau de variations :
+
+\begin{center}
+\begin{tikzpicture}
+\tkzTab[lgt=3]%
+{$x$/1.25,Signe de\\ $f'(x)$/1.5, Variations\\ de $f$/2.5}
+{$-\infty$,$\dfrac{-1}{2}$,$1$,$+\infty$}
+{,-,$0$,+, ,-,}
+{+/ $1$ , -/$\dfrac{-1}{3}$ , +V+/ $+\infty$ /$+\infty$ , -/$1$}
+\end{tikzpicture}
+\end{center}
+
+On appelle (C) la courbe représentative de $f$ dans un repère Le plan est muni d'un repère orthonormé $(O;\vec{\imath};\vec{\jmath})$ (unités graphiques 2 cm sur chaque axe)
+ 
+\vspace{6pt}
+\textbf{Première partie}
+
+En interprétant le tableau donné ci-dessus :%
+ 
+ \begin{enumerate}
+ \item  Préciser l'ensemble de définition de $f$.
+ \item  Placer dans le repère $(O;\vec{\imath};\vec{\jmath})$  :
+ \begin{enumerate}
+ \item  l'asymptote horizontale (D);
+ \item  l'asymptote verticale (D');
+ \item  le point $A$ où la tangente à (C) est horizontale.
+ \end{enumerate}
+ \end{enumerate}
+
+\textbf{Seconde partie}
+
+On donne maintenant l'expression de $f$ :
+\[
+f(x)=1 + \dfrac{4}{(x-1)}    + \dfrac{3}{(x-1)^2}
+\]
+\begin{enumerate}
+ \item Résoudre les équations $f(x)=0$ et $f(x)=1$.
+ \item  Au moyen de votre calculatrice, remplir le tableau suivant
+  ( recopier ce tableau sur votre copie).
+\end{enumerate}
+\begin{tikzpicture}
+   \tkzTabInit[deltacl=1,espcl=1]{ $x$/1 , $f(x)$ /1}%
+              {-1,,{-0,75},,{0,5},,2,,3,,4}%
+   \tkzTabLine{,,,,,,,,,,,,,,,,,,,,}%
+   \makeatletter
+   \foreach \x in {1,...,5}
+    \setcounter{tkz@cnt@pred}{\x}\addtocounter{tkz@cnt@pred}{\x}
+    \draw (N\thetkz@cnt@pred 0.center) to (N\thetkz@cnt@pred 2.center);
+\end{tikzpicture}
+}
+
+
+\begin{tkzexample}[code only,small]
+On considère une fonction $f$ de la variable $x$, dont on donne le tableau de variations :
+
+\begin{center}
+\begin{tikzpicture}
+\tkzTab[]%
+{$x$/1.25,Signe de\\ $f'(x)$/1.5, Variations\\ de $f$/2.5}
+{$-\infty$,$\dfrac{-1}{2}$,$1$,$+\infty$}
+{,-,$0$,+, ,-,}
+{+/ $1$ , -/$\dfrac{-1}{3}$ , +V+/ $+\infty$ /$+\infty$ , -/$1$}
+\end{tikzpicture}
+\end{center}
+
+ \vspace{6pt}
+On appelle (C) la courbe représentative de $f$ dans un repère. Le plan est muni d'un repère%
+ orthonormal  $(O;\vec{\imath};\vec{\jmath})$ (unités graphiques 2 cm sur chaque axe)%
+
+\textbf{Première partie}
+
+En interprétant le tableau donné ci-dessus :%
+ 
+ \begin{enumerate}
+ \item  Préciser l'ensemble de définition de $f$.
+ \item  Placer dans le repère $(O;\vec{\imath};\vec{\jmath})$  :
+ \begin{enumerate}
+ \item  l'asymptote horizontale (D);
+ \item  l'asymptote verticale (D');
+ \item  le point $A$ où la tangente à (C) est horizontale.
+ \end{enumerate}
+ \end{enumerate}
+
+\textbf{Seconde partie}
+
+On donne maintenant l'expression de $f$ :
+\[
+f(x)=1 + \dfrac{4}{(x-1)}    + \dfrac{3}{(x-1)^2}
+\]
+\begin{enumerate}
+ \item Résoudre les équations $f(x)=0$ et $f(x)=1$.
+ \item  Au moyen de votre calculatrice, remplir le tableau suivant
+  ( recopier ce tableau sur votre copie).
+   \begin{tikzpicture}
+   \tkzTabInit[deltacl=1,espcl=1]{ $x$/1,$f(x)$ /1}%
+   {-1,,{-0,75},,{0,5},,2,,3,,4}%
+   \tkzTabLine{,,,,,,,,,,,,,,,,,,,,}%
+   \makeatletter
+   \foreach \x in {1,...,5}
+    \setcounter{tkz@cnt@pred}{\x}\addtocounter{tkz@cnt@pred}{\x}
+    \draw (N\thetkz@cnt@pred 0.center) to (N\thetkz@cnt@pred 2.center);
+    \end{tikzpicture}
+\end{enumerate}
+
+\vfill
+\end{tkzexample}
+
+\endinput
