@@ -26,7 +26,7 @@
 %% Objet :  Création de tableaux (signes et variations)
 %<----------------------------------------------------------------------------->
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{tkz-tab}[2018/09/19 v1.4d  variations  (ctan  version)  ]
+\ProvidesPackage{tkz-tab}[2019/01/19 v1.4e  variations  (ctan  version)  ]
 %<----------------------------------------------------------------------------->
 \ifx\e@alloc\@undefined
   \RequirePackage{etex}
@@ -204,7 +204,7 @@
 \tikzset{arrow style/.append style = {\cmdTAB@TTS@arrowcolor,
                                       > = \cmdTAB@TTS@arrowstyle,
                                     line width = \cmdTAB@TTS@arrowlinewidth}}
-\tikzset{node style/.append style  = { fill =  fondpaille}}
+\tikzset{node style/.append style  = { fill = \cmdTAB@TTS@backgroundcolor}}
 \tikzset{fondC/.style={fill = \cmdTAB@TTS@backgroundcolor}}
 \tikzset{fondL/.style={fill = \cmdTAB@TTS@backgroundcolor}}
 \tikzset{fondT/.style={fill = \cmdTAB@TTS@backgroundcolor}}
