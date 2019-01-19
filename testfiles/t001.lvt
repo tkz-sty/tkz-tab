@@ -1,0 +1,63 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{regression-test}
+
+\usepackage{tkz-tab} %% http://altermundus.fr/
+
+\usetikzlibrary{arrows.meta}
+
+\usepackage[most]{tcolorbox}
+
+\newtcolorbox{cadrest}[1][]{%
+	colback=white,
+	colframe=black!85,
+	left=2mm,
+	right=2mm,
+	top=2mm,
+	bottom=2mm,
+	boxsep=0mm,
+	toptitle=0.7mm,
+	bottomtitle=1mm,
+	toptitle=1mm,
+	lefttitle=5mm,
+	rounded corners=all,
+	leftright skip=1cm,
+	skin=enhanced,
+	colbacktitle=black!55,
+	drop small lifted shadow=black,
+	notitle,#1%
+}
+
+
+\newcommand*{\pinf}{{+\infty}}
+\newcommand*{\minf}{{-\infty}}
+
+%%%%%%%%%%%%%%%%%%%% Paramètres %%%%%%%%%%%%%%%%%%%%
+
+\title{DS --- Second degré -- 1\iere{} partie}
+\author{Jérôme BARTH}
+\date{}
+
+%%%%%%%%%%%%%%%%%%%% Début %%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+Dresser le tableau de variations de la fonction $f\colon x \mapsto 3(x-1)^2-2$
+
+\begin{cadrest}[colupper=red,box align=center,width=9cm+1.8pt,
+center,left=-0.1pt,right=-0.1pt,top=-0.1pt,bottom=-0.1pt,
+boxsep=-0.1pt,colframe=red]
+
+\START
+\tkzTabSetup
+\hfuzz10pt
+\begin{tikzpicture}
+  \tikzset{arrow style/.style =
+    {->, > = Stealth, shorten > = 6pt, shorten < = 6pt}}
+  \tkzTabInit[nocadre]{ $x$ /1, $f(x)$ /2}{ $\minf$, $1$, $\pinf$}
+  \tkzTabVar{+/ {}, -/ $-2$, +/ {}}
+  \end{tikzpicture}
+\end{cadrest}
+
+
+\end{document}
