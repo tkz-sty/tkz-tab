@@ -1,6 +1,4 @@
-
-% 25 / 02 /2009 v1.0c TKZdoc-tab-main        11h     
-%  $Id: TKZdoc-tab-main.tex   alain matthes $  
+% !TEX TS-program = lualatex
 %  encoding : utf8 
 %  linknodesdoc.tex
 %  Created by Alain Matthes  on 2008-01-19.
@@ -19,143 +17,171 @@
 % ``TKZdoc-tab-main '' is the french doc of tkz-tab
 %
 %
-\documentclass[DIV=14,fontsize=10,headinclude=false,index=totoc,footinclude=false,headings=small]{tkz-doc} 
+\documentclass[DIV         = 14,
+               fontsize    = 10,
+               headinclude = false,
+               index       = totoc,
+               footinclude = false,
+               twoside,
+               headings    = small
+               ]{tkz-doc}
+\usepackage{etoc}
+
+\gdef\tkznameofpack{Tkz-Tab}
+\gdef\tkzversionofpack{2.1c}
+\gdef\tkzdateofpack{2020/04/10}
+\gdef\tkznameofdoc{doc-tkz-tab}
+\gdef\tkzdateofdoc{2020/04/10}
+\gdef\tkzversionofdoc{2.1c} 
+\gdef\tkzauthorofpack{Alain Matthes}
+\gdef\tkzadressofauthor{}
+\gdef\tkznamecollection{AlterMundus} 
+\gdef\tkzurlauthor{http://altermundus.fr}
+\gdef\tkzurlauthorcom{http://altermundus.fr}  
+\gdef\tkzengine{lualatex}
 
 \usepackage{tkz-tab} 
-\usetikzlibrary[petri]
-\usepackage[frenchb]{babel}
-\usepackage[np,autolanguage]{numprint}
+\usetikzlibrary[petri,babel]
+\usepackage[colorlinks]{hyperref}
+\hypersetup{
+      linkcolor=Gray,
+      citecolor=Green,
+      filecolor=Mulberry,
+      urlcolor=NavyBlue,
+      menucolor=Gray,
+      runcolor=Mulberry,
+      linkbordercolor=Gray,
+      citebordercolor=Green,
+      filebordercolor=Mulberry,
+      urlbordercolor=NavyBlue,
+      menubordercolor=Gray,
+      runbordercolor=Mulberry,
+      pdfsubject={Cartesian System},
+      pdfauthor={\tkzauthorofpack},
+      pdftitle={\tkznameofpack},
+      pdfkeywords={tikz, pgf, pdf, pdflatex, graphic, euclide,lualatex,
+      geometry, points, maths, line, circle, angle ,polygon},
+      pdfcreator={\tkzengine}
+}
+\usepackage{tkzexample}
+\usepackage{fontspec}
+\setmainfont{texgyrepagella}[
+  Extension = .otf,
+  UprightFont = *-regular ,
+  ItalicFont  = *-italic  ,
+  BoldFont    = *-bold    ,
+  BoldItalicFont = *-bolditalic ,
+]
+\setsansfont{texgyreheros}[
+  Extension = .otf,
+  UprightFont = *-regular ,
+  ItalicFont  = *-italic  ,
+  BoldFont    = *-bold    ,
+  BoldItalicFont = *-bolditalic ,
+]
 
-\usepackage[pdftex,unicode,
-                colorlinks=true,
-                pdfpagelabels, 
-                urlcolor=blue,
-                filecolor=pdffilecolor,
-                linkcolor=blue,
-                breaklinks =false,
-                hyperfootnotes=false,
-                bookmarks=false,
-                bookmarksopen=false, 
-                linktocpage=true,
-                pdfsubject={qcm},
-                pdfauthor={Alain Matthes},
-                pdftitle={alterqcm},
-                pdfkeywords={qcm, mathematics, table},
-                pdfcreator={LaTeX}
-                ]{hyperref}  
+\setmonofont{lmmono10-regular.otf}[
+  Numbers={Lining,SlashedZero},
+  ItalicFont=lmmonoslant10-regular.otf,
+  BoldFont=lmmonolt10-bold.otf,
+  BoldItalicFont=lmmonolt10-boldoblique.otf,
+]
+\newfontfamily\ttcondensed{lmmonoltcond10-regular.otf}
+%% (La)TeX font-related declarations:
+\linespread{1.05}      % Pagella needs more space between lines
+\usepackage{unicode-math}
+\usepackage{fourier-otf}
+% \makeatletter
+% \if@tkzcadre \usepackage{zorna} \fi
+% \makeatother
+\usepackage{calc}
+\usepackage[french]{babel}
+\usepackage[np,autolanguage]{numprint}
+\usepackage[parfill]{parskip}    
+\usepackage{array,multirow,multido,booktabs}
+\usepackage{shortvrb,fancyvrb} 
+\renewcommand{\labelitemi}{--}
+
 \usepackage{url}
 \def\UrlFont{\small\ttfamily}
-\usepackage[protrusion = true,
-            expansion,
-            final,
-            verbose = false,
-            babel   = true]{microtype} 
+% \usepackage[protrusion = true,
+%             expansion,
+%             final,
+%             verbose = false,
+%             babel   = true]{microtype}
 
 
-\DisableLigatures{encoding = T1, family = tt*}   
-\usepackage[parfill]{parskip}    
-
-
-
-\gdef\urlauthorcom{http://altermundus.com}  
-
-\gdef\nameofpack{Tkz-Tab}
-\gdef\versionofpack{1.1c}
-\gdef\dateofpack{2010/02/24}
-\gdef\nameofdoc{doc-tkz-tab}
-\gdef\dateofdoc{2010/02/24}
-\gdef\authorofpack{Alain Matthes}
-\gdef\adressofauthor{}
-\gdef\namecollection{AlterMundus} 
-\gdef\urlauthor{http://altermundus.fr}
-\gdef\urlauthor{http://altermundus.com}   
-
-\usepackage{shortvrb}  
+%\DisableLigatures{encoding = T1, family = tt*}   
 \makeatletter
-\renewcommand*\l@subsubsection{\bprot@dottedtocline{3}{3.8em}{4em}}  
+%\renewcommand*\l@subsubsection{\bprot@dottedtocline{3}{3.8em}{4em}}  
 \makeatother
 \AtBeginDocument{\MakeShortVerb{\|}}
-
-\pdfcompresslevel=9
-\pdfinfo{
-    /Title (doc-tkz-tab.pdf)
-    /Creator (TeX)
-    /Producer (pdfeTeX)
-    /Author (Alain Matthes)
-    /CreationDate (13 mars 2009)
-    /Subject (Documentation du package tkz-tab v 1.1c)
-    /Keywords (pdfeTeX, tab, variations, function, sign, maths, pdflatex) }
     
 \colorlet{graphicbackground}{white}
-\colorlet{codebackground}{Peach!20}
+\colorlet{codebackground}{Gray!20}
 \newcommand*{\E}{\ensuremath{\mathrm{e}}}
-\usepackage{tkzexample}
+
+\setlength\parindent{0pt}
+\RequirePackage{makeidx} 
+%\@twocolumnfalse
+\makeindex 
 %<---------------------------------------------------------------------------> 
 \begin{document} 
 
 
-\title{\nameofpack}
+\title{\tkznameofpack}
 \date{\today}
 \clearpage
 \thispagestyle{empty}
-\maketitle
+ \maketitle
 \clearpage
+%
+% \definecolor{fondpaille}{cmyk}{0,0,0.1,0}
+% \colorlet{graphicbackground}{fondpaille}
+% \colorlet{codebackground}{brown!15}
+% \colorlet{codeonlybackground}{brown!15}
+% \colorlet{textcodecolor}{Maroon}
 
-\definecolor{fondpaille}{cmyk}{0,0,0.1,0}
-\colorlet{graphicbackground}{fondpaille}
-\colorlet{codebackground}{brown!15}
-\colorlet{codeonlybackground}{brown!15} 
-\colorlet{textcodecolor}{Maroon} 
-\pagecolor{fondpaille}
-\color{Maroon}    
-\tkzTabColors[backgroundcolor=fondpaille,color=Maroon]  
 
-\nameoffile{\nameofpack} 
-\defoffile{\textbf{tkz-tab.sty} est un package pour créer à l'aide de \TIKZ des tableaux de signes et de variations le plus simplement possible. Il est dépendant de \TIKZ et fera partie d'une série de packages ayant comme point commun, la création de dessins utiles dans l'enseignement des mathématiques. La lecture de cette documentation va, je l'espère vous permettre d'apprécier la simplicité d'utilisation de \TIKZ et vous permettre de commencer à le pratiquer.}
+\nameoffile{\tkznameofpack} 
+\defoffile{\textbf{tkz-tab.sty} est un package pour créer à l'aide de \TIKZ\ des tableaux de signes et de variations le plus simplement possible. Il est dépendant de \TIKZ\ et fera partie d'une série de packages ayant comme point commun, la création de dessins utiles dans l'enseignement des mathématiques. La lecture de cette documentation va, je l'espère vous permettre d'apprécier la simplicité d'utilisation de \TIKZ\ et vous permettre de commencer à le pratiquer.}
 
-\presentation  
+\presentation
 
 \vfill
 \lefthand\ Je remercie  \tkzimp{Till Tantau} pour nous permettre d'utiliser \tkzname{\TIKZ}.
 
 \lefthand\ Je remercie  \tkzimp{Michel Bovani} pour nous permettre d'utiliser \tkzname{fourier} et \tkzname{utopia} avec \LaTeX.
 
-\lefthand\ Je remercie  \tkzimp{Henri-Claude Dufresne } pour sa lecture approfondie de la documentation et ses propositions de correction.  
+\lefthand\ Je remercie  \tkzimp{Henri-Claude Dufresne } pour sa lecture approfondie de la documentation et ses propositions de correction.
 
-henri-claude Dufresne
 \lefthand\ Je remercie également  \tkzimp{Jean-Côme Charpentier},  \tkzimp{Manuel Pégourié-Gonnard},  \tkzimp{Franck Pastor}, \tkzimp{Ulrike Fischer} et \tkzimp{Josselin Noirel}  pour les différentes idées et conseils qui m'ont permis de faire ce package, ainsi que \tkzimp{Herbert Vo\ss }  pour son document \tkzname{mathmode.pdf}.
 
 
 
 \clearpage
 \tableofcontents
-%<---------------------------------------------------------------------------> 
+%<--------------------------------------------------------------------------->
 \newcommand*{\va}{\colorbox{red!50}    {$\scriptscriptstyle V_a$}}
 \newcommand*{\vb}{\colorbox{blue!50}   {$\scriptscriptstyle V_b$}}
 \newcommand*{\vbo}{\colorbox{blue!50}  {$\scriptscriptstyle V_{b1}$}}
 \newcommand*{\vbt}{\colorbox{yellow!50}{$\scriptscriptstyle V_{b2}$}}
-\newcommand*{\vc}{\colorbox{gray!50}   {$\scriptscriptstyle V_c$}} 
-\newcommand*{\vd}{\colorbox{magenta!50}{$\scriptscriptstyle V_d$}} 
-\newcommand*{\ve}{\colorbox{orange!50} {$\scriptscriptstyle V_e$}} 
+\newcommand*{\vc}{\colorbox{gray!50}   {$\scriptscriptstyle V_c$}}
+\newcommand*{\vd}{\colorbox{magenta!50}{$\scriptscriptstyle V_d$}}
+\newcommand*{\ve}{\colorbox{orange!50} {$\scriptscriptstyle V_e$}}
 %<--------------------------------------------------------------------------->
-\tkzTabColors[backgroundcolor=fondpaille,color=Maroon] 
-
-\include{TKZdoc-tab-install}
-\include{TKZdoc-tab-init}
-\include{TKZdoc-tab-sign}
-\include{TKZdoc-tab-variation}
-\include{TKZdoc-tab-tv}
-\include{TKZdoc-tab-valeurs}
-\include{TKZdoc-tab-image}
-\include{TKZdoc-tab-tangente}
-\include{TKZdoc-tab-slope}
-\include{TKZdoc-tab-style}
-\include{TKZdoc-tab-adapt}
-\include{TKZdoc-tab-examples} 
-%<--------------------------------------------------------------------------> 
+\input{TKZdoc-tab-init}
+\input{TKZdoc-tab-sign}
+\input{TKZdoc-tab-variation}
+\input{TKZdoc-tab-tv}
+\input{TKZdoc-tab-valeurs}
+\input{TKZdoc-tab-image}
+\input{TKZdoc-tab-tangente}
+\input{TKZdoc-tab-slope}
+\input{TKZdoc-tab-style}
+\input{TKZdoc-tab-adapt}
+\input{TKZdoc-tab-examples}
+%<-------------------------------------------------------------------------->
+\newpage
 \printindex
 \end{document}
-%<------------------------------------------------------------------------->
-
-
-

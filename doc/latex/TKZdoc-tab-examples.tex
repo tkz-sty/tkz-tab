@@ -1,50 +1,25 @@
-% 24 / 02 /2009 v1.00c TKZdoc-tab-examples
 \section{Galerie}
 \subsection{Tableaux de signes}
 L'exemple suivant provient de la documentation de l'excellent \tkzname{tablor.sty}.
-Voici le code complet 
+
 
 \medskip
-\begin{center}
-\begin{tkzexample}[code only]
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{ifthen,fp}
-\usepackage{tikz,tkz-tab}
-\usepackage{amsmath,amssymb}
-\usepackage[frenchb]{babel}
 
-\begin{document}
-\begin{tikzpicture}
-  \tkzTabInit[lgt=3]
-     {$x$                                  /1,
-      Signe de\\ $-2+3$                    /1.5,
-      Signe de\\ $-x+5$                    /1.5,
-      Signe de\\ $(-2x+3)(-x+5)$           /1.5 }%
-     {$-\infty$,$\dfrac{3}{2}$,$5$,$+\infty$}%
-  \tkzTabLine { ,+,z,-,t,-, }
-  \tkzTabLine { ,+,t,+,z,-, }
-  \tkzTabLine { ,+,z,-,z,+, }
-\end{tikzpicture}
-\end{document}
+
+\begin{tkzexample}[vbox,small]
+  \begin{tikzpicture}
+    \tkzTabInit[lgt=3]
+       {$x$                                  /1,
+        Signe de\\ $-2+3$                    /1.5,
+        Signe de\\ $-x+5$                    /1.5,
+        Signe de\\ $(-2x+3)(-x+5)$           /1.5 }%
+       {$-\infty$,$\dfrac{3}{2}$,$5$,$+\infty$}%
+    \tkzTabLine { ,+,z,-,t,-, }
+    \tkzTabLine { ,+,t,+,z,-, }
+    \tkzTabLine { ,+,z,-,z,+, }
+  \end{tikzpicture}
 \end{tkzexample}
-\end{center}
-
-\begin{tikzpicture}
-  \tkzTabInit[lgt=3]
-     {$x$                                  /1,
-      Signe de\\ $-2+3$                    /1.5,
-      Signe de\\ $-x+5$                    /1.5,
-      Signe de\\ $(-2x+3)(-x+5)$           /1.5 }%
-     {$-\infty$,$\dfrac{3}{2}$,$5$,$+\infty$}%
-  \tkzTabLine { ,+,z,-,t,-, }
-  \tkzTabLine { ,+,t,+,z,-, }
-  \tkzTabLine { ,+,z,-,z,+, }
-\end{tikzpicture}
  
-
-Quelques remarques sur ce code. Le codage utilisé n'a pas d'importance, si vous préférez \tkzname{latin1}, alors remplacez  \tkzname{utf8} par \tkzname{latin1}, bien évidemment  \tkzname{tkz-tab} est essentielle. Si vous utilisez \tkzname{fourier} alors vous pouvez supprimer   \tkzcname{usepackage[T1]\{fontenc\}} et \tkzcname{usepackage\{ammsymb\}}.
 
 \subsection{Variations de fonctions}
  \subsubsection{Variation d'une fonction rationnelle}
@@ -446,6 +421,155 @@ f(x)=1 + \dfrac{4}{(x-1)}    + \dfrac{3}{(x-1)^2}
 \end{enumerate}
 
 \vfill
+\end{tkzexample}
+
+\subsection{Exemple relatif à une question: problème de virgule}
+
+Il suffit pour régler ce genre de problème d'utiliser le package numprint.
+La macro |\np| permet d'afficher correctement $1,5$.
+\begin{tkzexample}[code only, small]
+\usepackage[french]{babel}
+\usepackage[np]{numprint}
+\end{tkzexample}
+
+\begin{tkzexample}[vbox]
+\begin{tikzpicture}[scale=1]
+\tkzTabInit[lgt=6,espcl=7]
+{$x$/0.75,
+$x\np{-1.5}$/0.75}
+{$-\infty$,$+\infty$}
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsection{Quelques tableaux classiques}
+
+Tableau 1 (ln) :
+
+\begin{tkzexample}[vbox,small]
+  \begin{tikzpicture}
+  \tkzTabInit[espcl=6]{$x$/1,$\ln'(x)$/1,$\ln(x)$/2}{$0$,$+\infty$}
+  \tkzTabLine{d,+,}
+  \tkzTabVar{D-/$-\infty$,+/$+\infty$,}
+  \tkzTabVal{1}{2}{0.4}{1}{0}
+  \tkzTabVal{1}{2}{0.67}{$\E$}{1}
+  \end{tikzpicture}
+\end{tkzexample}
+
+
+\bigskip
+
+Tableau 2 (racine) :
+
+\begin{tkzexample}[vbox,small]
+\begin{tikzpicture}
+\tkzTabInit[lgt=3,espcl=6]{$x$/1,$f'(x)$/1,$f(x)=\sqrt{x}$/2}{$0$,$+\infty$}
+\tkzTabLine{d,+,}
+\tkzTabVar{-/0,+/$+\infty$,}
+\end{tikzpicture}
+\end{tkzexample}
+
+\bigskip
+
+Tableau 3 (inverse) :
+
+\begin{tkzexample}[vbox,small]
+\begin{tikzpicture}
+\tkzTabInit[lgt=3,espcl=6]{$x$/1,$f'(x)=-\dfrac{1}{\ x^2}$/1,$f(x)=\dfrac{1}{x}$/2}{$-\infty$,$0$,$+\infty$}
+\tkzTabLine{,-,d,-,}
+\tkzTabVar{+/0,-D+/$-\infty$/$+\infty$,-/0}
+\end{tikzpicture}
+\end{tkzexample}
+
+\bigskip
+
+Tableau 4 (\(f(x)=\dfrac{x^2+4}{x}\)):
+\begin{tkzexample}[vbox,small]		
+\begin{tikzpicture}
+\tkzTabInit[]{\(x$/1,$f'(x)\)/1,\(f(x)\)/2}{\(-\infty\),\(-2\),\(0\),2,\(+\infty\)}
+\tkzTabLine{,+,z,-,d,-,z,+,}
+\tkzTabVar{-/\(-\infty\),+/-4,-D+/$-\infty$/$+\infty$,-/4,+/\(+\infty\)}
+\end{tikzpicture}
+\end{tkzexample}
+
+\bigskip
+
+
+Tableau 5 (cos):
+\begin{tkzexample}[vbox,small]
+\begin{tikzpicture}
+\tkzTabInit{$x$/1,$-\sin(x)$/1,$\cos(x)$/2}{$0$,$\pi$,$2\pi$}
+\tkzTabLine{z,-,z,+,z}
+\tkzTabVar{+/$1$,-/$-1$,+/$1$}
+\tkzTabVal{1}{2}{0.5}{$\dfrac{\pi}{2}$}{0}
+\tkzTabVal{2}{3}{0.5}{$\dfrac{3\pi}{2}$}{0}
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsection{Utilisation de la macro \tkzcname{par}}
+
+Et bien c'est impossible. La meilleure solution est d'utiliser la macro |\parbox| sinon l'emploi de |\endgraf| définit par |\let\endgraf=\par| peut faire l'affaire.
+
+\begin{tkzexample}[width=7cm,small]
+  \begin{tikzpicture}
+  \tkzTabInit {$x$ / 1 ,$f(x)$ /1}%
+  {$0$,$1$}
+  \tkzTabLine{,\parbox{3cm}{$u(x)$\\ $v(x)$},}
+  \end{tikzpicture}
+\end{tkzexample}
+
+\subsection{Exemple utiisant l'option help}
+
+\begin{tkzexample}[vbox,small]
+  \begin{tikzpicture}
+  \tkzTabInit[color, colorT = red!20, colorC = yellow!20,
+   colorL = cyan!40,  colorV = lightgray!20, espcl=3,help]
+        {$x$ /1, $f''$ /1,$f'$ /2,  $f$ /2}
+        {$-\infty$ , $0$ ,$+\infty$}
+  \tkzTabLine{, - , z , + ,}
+  \tkzTabVar{+/$+\infty$ , -/$-2$ , +/$+\infty$}
+  \tkzTabVal[draw]{1}{2}{.6}{$x_1$}{$0$}
+  \tkzTabVal[draw]{2}{3}{.4}{$x_2$}{$0$}
+  \end{tikzpicture}
+\end{tkzexample}
+
+
+\begin{tkzexample}[vbox,small]
+  \begin{tikzpicture}
+  \tikzset{arrow style/.style   = {black,
+  >->           = latex’,thick ,
+  shorten >   =  5pt,
+  shorten <   =  5pt}}
+  \tkzTabInit[color, colorT = red!20, colorC = yellow!20,
+   colorL = cyan!40,  colorV = lightgray!20, espcl=3]
+        {$x$ /1, $f''$ /1,$f'$ /2,  $f$ /2}
+        {$-\infty$ , $0$ ,$+\infty$}
+  \tkzTabLine{, - , z , + ,}
+  \tkzTabVar{+/$+\infty$ , -/$-2$ , +/$+\infty$}
+  \tkzTabVal[draw]{1}{2}{.6}{$x_1$}{$0$}
+  \tkzTabVal[draw]{2}{3}{.4}{$x_2$}{$0$}
+  \begin{scope}[>->,line width=1pt,>=stealth]
+  \path (N13) -- (N23) node[midway,below=6pt](N){};
+  \draw ([above=6pt]N14) to [bend left=45] ([left=1pt]N);
+  \draw ([right=3pt]N) to [bend left=45] ([above=6pt]N24)  ;
+  \draw ([above right=6pt]N24)to [bend right=40] ([below left=6pt]N33);
+  \end{scope}
+  \end{tikzpicture}
+\end{tkzexample}
+
+\subsection{Exemple modifiant la largeur d'une colonne}
+Cette modification n'est pas prévue. Une astuce consiste à intoduire des colonnes vides.
+
+\begin{tkzexample}[vbox,small]
+  \begin{tikzpicture}
+      \tikzset{t style/.style = {style = densely dashed}} 
+      \tkzTabInit[lgt=4, espcl = 1.2, lw = 0.5pt, deltacl=0]
+      { / 0.7 , $x(x^2-5x+4)$ / 1}{ ,$0$, $1$, , $4$,}
+      \tkzTabLine{,-,t,+,t,,-,,t, +,}
+      \draw[fill=black] (N21) circle(2pt);
+      \draw[fill=black] (N31) circle(2pt);
+      \draw[fill=black] (N51) circle(2pt);
+      \draw[->=stealth, line width=1.5pt] (N11) -> (N61.east) node[right=2pt] {$x$};
+  \end{tikzpicture}
 \end{tkzexample}
 
 \endinput

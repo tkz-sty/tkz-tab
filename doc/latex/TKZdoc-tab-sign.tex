@@ -1,5 +1,4 @@
-%!TEX root = /Users/ego/Boulot/TKZ/tkz-tab/doc/TKZdoc-tab-main.tex 
-% 22 / 02 /2009 v1.0c TKZdoc-tab-sign   10h
+\newpage
 \section{Création d'une ligne de signes : \tkzcname{tkzTabLine}}
 \subsection{Définition}
 
@@ -179,7 +178,7 @@ Une fonction peut ne pas être définie sur un intervalle, ici $[1~;~2]$. La par
 \subsubsection{\tkzname{t style} : modification du style des traits verticaux}
 \Istyle{tkzTabLine}{t style}
 
-\begin{tkzexample}[width=8cm, small]
+\begin{tkzexample}[width=7cm, small]
 \begin{tikzpicture} 
 \tikzset{t style/.style = {style = dashed}} 
   \tkzTabInit[espcl=1.5]
@@ -190,8 +189,8 @@ Une fonction peut ne pas être définie sur un intervalle, ici $[1~;~2]$. La par
 \end{tkzexample}  
 
 
-\begin{tkzexample}[width=8cm, small]
-    \tikzset{t style/.style = {style = densely dashed}}   
+\begin{tkzexample}[width=7cm, small]
+\tikzset{t style/.style = {style = densely dashed}}   
 \begin{tikzpicture}
   \tkzTabInit[espcl=1.5]
      {$x$  / 1 ,$f(x)$ /1 }%
@@ -210,20 +209,20 @@ Voir la section \og personnalisation \fg\ (\ref{pers}).
 \subsubsection{\tkzname{h style} : modification de la couleur d'une zone interdite}
 \Istyle{tkzTabLine}{h style} \index{zone interdite}
 Si vous préférez hachurer une zone du tableau, alors  il faut modifier un style. 
-\begin{tkzexample}[small]
+\begin{tkzexample}[width=8cm,small]
 \begin{tikzpicture}
-      \tikzset{h style/.style = {fill=red!50}}
-      \tkzTabInit[color,espcl=1.5]%
-        {$x$ / 1,$g(x)$ / 1}%
-        {$0$,$1$,$2$,$3$}%
-      \tkzTabLine{z,+,d,h,d,-,t}
+  \tikzset{h style/.style = {fill=red!50}}
+  \tkzTabInit[color,espcl=1.5]%
+    {$x$ / 1,$g(x)$ / 1}%
+    {$0$,$1$,$2$,$3$}%
+  \tkzTabLine{z,+,d,h,d,-,t}
 \end{tikzpicture}
 \end{tkzexample}
 
 
 Cette fois la zone est hachurée.
  \index{hachures}
-\begin{tkzexample}[small]
+\begin{tkzexample}[width=8cm,small]
 \begin{tikzpicture}
   \tikzset{h style/.style =
           {pattern=north west lines}}
@@ -240,7 +239,7 @@ Cette fois la zone est hachurée.
 
 \subsubsection{Simplification d'une expression comportant une valeur absolue }
 
-\begin{tkzexample}[width=7cm,small]
+\begin{tkzexample}[width=8cm,small]
  \begin{tikzpicture}
  \tkzTabInit[lgt=2,espcl=1.75]%
   {$x$/1,$2-x$/1, $\vert 2-x \vert $/1}%

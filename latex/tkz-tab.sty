@@ -1,41 +1,21 @@
-% Copyright (C) 2009 Alain Matthes  
-%
-% This file may be distributed and/or modified
-%
-% 1. under the LaTeX Project Public License , either version 1.3
-% of this license or (at your option) any later version and/or
-% 2. under the GNU Public License.
-%
-% See the file doc/generic/pgf/licenses/LICENSE for more details.%
-% See http://www.latex-project.org/lppl.txt for details.
-%
-%
-% ``tkz-tab'' package for create tables of signs and variations.
-%
-%
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %                                                               %
-    %        tkz-tab.sty    encodage : utf8                         %
-    %                                                               %
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %                                                               %
-    %           Créé par Alain Matthes le 04-01-2007.               %
-    %            CTAN version                                       %
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%% Objet :  Création de tableaux (signes et variations)
+% Copyright 2020  Alain Matthes
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+% http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX version 2005/12/01 or later.
+% This work has the LPPL maintenance status “maintained”.
+% The Current Maintainer of this work is Alain Matthes.
+% Objet :  Création de tableaux (signes et variations)
 %<----------------------------------------------------------------------------->
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{tkz-tab}[2019/01/19 v1.4e  variations  (ctan  version)  ]
+\ProvidesPackage{tkz-tab}[2020/04/08 v2.1c  variations  (ctan  version)]
 %<----------------------------------------------------------------------------->
-\ifx\e@alloc\@undefined
-  \RequirePackage{etex}
-\fi
 \RequirePackage{ifthen}
 \RequirePackage{xkeyval}[2005/11/25]
-\RequirePackage{tikz}[2008/01/15]
+\RequirePackage{tikz}
 \usetikzlibrary{arrows,patterns}
-
 %<------------------------------ Initialisation ----------------------------->
 
 %<------------------------------   Styles       ----------------------------->
@@ -204,7 +184,7 @@
 \tikzset{arrow style/.append style = {\cmdTAB@TTS@arrowcolor,
                                       > = \cmdTAB@TTS@arrowstyle,
                                     line width = \cmdTAB@TTS@arrowlinewidth}}
-\tikzset{node style/.append style  = { fill = \cmdTAB@TTS@backgroundcolor}}
+\tikzset{node style/.append style  = { fill =  fondpaille}}
 \tikzset{fondC/.style={fill = \cmdTAB@TTS@backgroundcolor}}
 \tikzset{fondL/.style={fill = \cmdTAB@TTS@backgroundcolor}}
 \tikzset{fondT/.style={fill = \cmdTAB@TTS@backgroundcolor}}
@@ -414,8 +394,9 @@
 \define@boolkey[TAB]{TL}{help}[true]{}
 \presetkeys[TAB]{TL}{help=false}{}
 %<--------------------------------------------------------------------------->
-\newcommand*{\tkzTabLine}[2][]{%
-\setkeys[TAB]{TL}{#1}%   
+\newcommand{\tkzTabLine}[2][]{%
+ \makeatletter
+ \setkeys[TAB]{TL}{#1}%   
  \setcounter{tkz@cnt@lg}{\thetkz@cnt@line}%
  \stepcounter{tkz@cnt@line}%
  \setcounter{tkz@cnt@lgnext}{\thetkz@cnt@line}%
@@ -424,16 +405,16 @@
  \setcounter{tkz@cnt@impair}{1}%
  \ifTAB@TL@help% 
  \foreach \x in {#2}
-   {%
+   {
    \ifthenelse{\isodd{\value{tkz@cnt@cl}}}{%
    \path (N\thetkz@cnt@impair\thetkz@cnt@lg) --%
-           node[draw,inner sep =1pt,midway,fill=yellow] {%
-            \footnotesize Z\thetkz@cnt@impair\thetkz@cnt@lg}%
+           node[draw,inner sep =1pt,midway,fill=yellow]%
+            {\footnotesize Z\thetkz@cnt@impair\thetkz@cnt@lg}%
          (N\thetkz@cnt@impair\thetkz@cnt@lgnext);
          \stepcounter{tkz@cnt@impair}}{%   
    \path (M\thetkz@cnt@pair\thetkz@cnt@lg)--%
-         node[draw,inner sep =1pt,midway,fill=yellow] {%
-           \footnotesize S\thetkz@cnt@pair\thetkz@cnt@lg}%
+         node[draw,inner sep =1pt,midway,fill=yellow]%
+        {\footnotesize S\thetkz@cnt@pair\thetkz@cnt@lg}%
          (M\thetkz@cnt@pair\thetkz@cnt@lgnext); 
    \stepcounter{tkz@cnt@pair}}%
    \stepcounter{tkz@cnt@cl}%
@@ -492,6 +473,7 @@
    \stepcounter{tkz@cnt@cl}%
    }% end foreach  
    \fi
+  \makeatother
 }%
 %<--------------------------------------------------------------------------->
 %<----------------------------  Variations    ------------------------------->
@@ -499,6 +481,7 @@
 %<----------------------- Macro pour tracer une flèche ---------------------->
 %<--------------------------------------------------------------------------->
 \newcommand*{\tkzDrawArrow}{%
+\makeatletter
 \ifthenelse{\equal{\thetkz@cnt@zone}{0}}{%
   \setcounter{tkz@cnt@pred}{\thetkz@cnt@cl}
   \addtocounter{tkz@cnt@pred}{-1}
@@ -517,6 +500,7 @@
   }{%
   \setcounter{tkz@cnt@zone}{0}%
   }%
+\makeatother
 }%
 %<--------------------------------------------------------------------------->
 \define@boolkey[TAB]{VA}{help}[true]{}
