@@ -30,6 +30,24 @@ The Current Maintainer of this work is Alain Matthes.
 The package compiles with utf8, pdflatex and lualatex.
 The package loads `TikZ` and you can use it.
 
+## Installation
+
+The package `tkz-tab` is present in TeXLive and MiKTeX, use the package
+manager to install.
+
+You can experiment with the `tkz-tab` package by placing all of the
+distribution files in the directory containing your current tex file.
+
+The different files must be moved into the different directories in your
+installation `TDS` tree or in your `TEXMFHOME`:
+
+```
+  doc/TKZdoc-tab.pdf   -> TDS:doc/latex/tkz-tab/TKZdoc-tab.pdf
+  doc/README.md        -> TDS:doc/latex/tkz-tab/README.md
+  doc/latex/*.*        -> TDS:doc/latex/tkz-tab/latex/*.*
+  latex/tkz-tab.sty    -> TDS:tex/latex/tkz-tab/tkz-tab.sty
+```
+
 ## Documentation
 
 Documentation for `tkz-tab` is available on `CTAN`. You will soon be able to find examples on my site [http://altermundus.fr](http://altermundus.fr).
