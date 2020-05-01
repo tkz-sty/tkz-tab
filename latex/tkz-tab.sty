@@ -10,7 +10,7 @@
 % Objet :  Création de tableaux (signes et variations)
 %<----------------------------------------------------------------------------->
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{tkz-tab}[2020/04/08 v2.1c  variations  (ctan  version)]
+\ProvidesPackage{tkz-tab}[2020/04/29 v2.12c  variations  (ctan  version)]
 %<----------------------------------------------------------------------------->
 \RequirePackage{ifthen}
 \RequirePackage{xkeyval}[2005/11/25]
@@ -184,7 +184,7 @@
 \tikzset{arrow style/.append style = {\cmdTAB@TTS@arrowcolor,
                                       > = \cmdTAB@TTS@arrowstyle,
                                     line width = \cmdTAB@TTS@arrowlinewidth}}
-\tikzset{node style/.append style  = { fill =  fondpaille}}
+\tikzset{node style/.append style  = { fill =  \cmdTAB@TTS@backgroundcolor}}
 \tikzset{fondC/.style={fill = \cmdTAB@TTS@backgroundcolor}}
 \tikzset{fondL/.style={fill = \cmdTAB@TTS@backgroundcolor}}
 \tikzset{fondT/.style={fill = \cmdTAB@TTS@backgroundcolor}}
@@ -641,6 +641,15 @@
  \node[node style,high right,on double] (FR\thetkz@cnt@cl\thetkz@cnt@lg) at (N\thetkz@cnt@aw\thetkz@cnt@lg){\ifTAB@VA@help\else\tr\fi};
  \ifthenelse{\equal{\thetkz@cnt@arrow}{0}}{}{\tkzDrawArrow}%
 }
+%<----------------------------------------------------------------- +CD+ ---->
+{\ifthenelse{\equal{\expandafter\stripspaces\expandafter{\x}}{+CD+}}%
+{\draw[double style]%
+ ([yshift = -\cmdTAB@tbs@lw/2] N\thetkz@cnt@cl\thetkz@cnt@lg) --%
+ ([yshift = \cmdTAB@tbs@lw/2] N\thetkz@cnt@cl\thetkz@cnt@lgnext);
+ \node[node style,high,on double] (FL\thetkz@cnt@cl\thetkz@cnt@lg) at (N\thetkz@cnt@aw\thetkz@cnt@lg){\ifTAB@VA@help\else\tl\fi};
+ \node[node style,high right,on double]   (FR\thetkz@cnt@cl\thetkz@cnt@lg) at (N\thetkz@cnt@aw\thetkz@cnt@lg){\ifTAB@VA@help\else\tr\fi};
+ \ifthenelse{\equal{\thetkz@cnt@arrow}{0}}{}{\tkzDrawArrow}%
+}%
 %<----------------------------------------------------------------- -CD- ---->
 {\ifthenelse{\equal{\expandafter\stripspaces\expandafter{\x}}{-CD-}}%
 {\draw[double style]%
@@ -793,7 +802,7 @@
  \node[node style,low,on double](FL\thetkz@cnt@cl\thetkz@cnt@lg) at (N\thetkz@cnt@aw\thetkz@cnt@lgnext){\ifTAB@VA@help\else\tl\fi};
 \ifthenelse{\equal{\thetkz@cnt@arrow}{0}}{}{\tkzDrawArrow}\stepcounter{tkz@cnt@zone}%
 }{}% non prévu
-}}}}}}}}}}}}}}}}}}}}}}}}}}}}}%
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}%
 \stepcounter{tkz@cnt@arrow}}% end de la boucle
 %<-------------------------------------------------- Tracé des flèches ------>
 \end{scope}%

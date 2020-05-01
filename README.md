@@ -1,6 +1,6 @@
 # tkz-tab – Tables of signs and variations using PGF/TikZ
 
-Release 2.1c 2020/04/10
+Release 2.12c 2020/04/29
 
 ## Description
 
@@ -55,7 +55,8 @@ Documentation for `tkz-tab` is available on `CTAN`. You will soon be able to fin
 
 ## History
 
-- v2.1 correction of bugs and add examples in the documentation.
+- v2.11 correction of a bug in the macro `\tkzTabSetup`.
+- v2.1  correction of bugs and add examples in the documentation.
 
 ## Author
 
