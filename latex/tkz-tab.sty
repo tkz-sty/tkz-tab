@@ -668,6 +668,15 @@
  \node[node style,low right,on double] (FR\thetkz@cnt@cl\thetkz@cnt@lg) at (N\thetkz@cnt@aw\thetkz@cnt@lgnext){\ifTAB@VA@help\else\tr\fi};
  \ifthenelse{\equal{\thetkz@cnt@arrow}{0}}{}{\tkzDrawArrow}%
 }
+%<----------------------------------------------------------------- +CD+ ---->
+{\ifthenelse{\equal{\expandafter\stripspaces\expandafter{\x}}{+CD+}}%
+{\draw[double style]%
+ ([yshift = -\cmdTAB@tbs@lw/2] N\thetkz@cnt@cl\thetkz@cnt@lg) --%
+ ([yshift = \cmdTAB@tbs@lw/2] N\thetkz@cnt@cl\thetkz@cnt@lgnext);
+ \node[node style,high,on double] (FL\thetkz@cnt@cl\thetkz@cnt@lg) at (N\thetkz@cnt@aw\thetkz@cnt@lg){\ifTAB@VA@help\else\tl\fi};
+ \node[node style,high right,on double]   (FR\thetkz@cnt@cl\thetkz@cnt@lg) at (N\thetkz@cnt@aw\thetkz@cnt@lg){\ifTAB@VA@help\else\tr\fi};
+ \ifthenelse{\equal{\thetkz@cnt@arrow}{0}}{}{\tkzDrawArrow}%
+}%
 %<----------------------------------------------------------------- -DC+ ---->
 {\ifthenelse{\equal{\expandafter\stripspaces\expandafter{\x}}{-DC+}}%
 {\draw[double style]%
