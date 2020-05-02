@@ -45,10 +45,10 @@ Il y a plusieurs  possibilités mais la suivante est préférable. L'antécéden
  \tkzTabVar{D- /$-\infty$ , R /    ,+ / $0$ }%
  \tkzTabIma{1}{3}{2}{-5}
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 \Iopt{tkzTabVal}{draw}
 
-Une autre possibilité est d'utiliser la macro \tkzcname{tkzTabImaFrom} ainsi que les nodes créés pour construire le tableau ;  voir la section \og personnalisation \fg\ (\ref{pers}) et la fin de ce chapitre. 
+Une autre possibilité est d'utiliser la macro \tkzcname{tkzTabImaFrom} ainsi que les nodes créés pour construire le tableau ;  voir la section \og personnalisation \fg\ (\ref{pers}) et la fin de ce chapitre.
 
 \subsubsection{Exemple avec plusieurs lignes de variations}
 \begin{tkzexample}[vbox,small]
@@ -62,15 +62,15 @@ Une autre possibilité est d'utiliser la macro \tkzcname{tkzTabImaFrom} ainsi qu
 	       $f$                     /3}%
 	     { $0$      , $1$ ,     $\alpha$,$+\infty$ }%
 	  \tkzTabLine {d    , + ,   z  , -  ,      , -  }%
-	  \tkzTabVar 
+	  \tkzTabVar
 	      {- / $1$       ,
 	       + /           ,
 	       R /           ,
 	       - / $-\infty$ }
 	  \tkzTabIma[draw]{2}{4}{3}{$0$}
     % ou bien  \tkzTabVal[draw]{2}{4}{0.5}{}{0} obsolète
-    	  \tkzTabLine {     , + ,      , +  ,  z   , -  }% 
-	  \tkzTabVar   
+    	  \tkzTabLine {     , + ,      , +  ,  z   , -  }%
+	  \tkzTabVar
 	     {- / $-\infty$ ,
 	      R /     ,
 	      + / $1$ ,
@@ -92,18 +92,18 @@ Une autre possibilité est d'utiliser la macro \tkzcname{tkzTabImaFrom} ainsi qu
      Variations de\\  $y$            /3,
     Signe de\\ $y'(t)$              /1.5}
     { $-\infty$ , $-4$ , $-1$ , $0$, $2$ , $+\infty$}%
-    
+
   \tkzTabLine { , - , z , + , d , + , z , - , d , - , }
-  
+
   \tkzTabVar  {+/$1$ , -/$ \frac{8}{9}$ ,+D-/$+\infty$/$-\infty$ ,
                +/$0$/ ,-D+ /$-\infty$/ $+\infty$ , -/$1$ /   }
-               
+
   \tkzTabVar  {+/$+\infty$ , R/ ,-D+/$-\infty$/$+\infty$ ,
                -/$0$ ,R / , +/$+\infty$ }
-               
-  \tkzTabIma{1}{3}{2}{$\frac{32}{3}$} 
-  \tkzTabIma{4}{6}{5}{$\frac{16}{3}$} 
-  
+
+  \tkzTabIma{1}{3}{2}{$\frac{32}{3}$}
+  \tkzTabIma{4}{6}{5}{$\frac{16}{3}$}
+
   \tkzTabLine{ , - , \frac{-64}{9} , - , d , - , z , + , \frac{44}{9} , + , }
  \end{tikzpicture}
 \end{tkzexample}
@@ -156,7 +156,7 @@ Il s'agit ici de \tkzname{N21}. C'est un node, plus exactement un point situé s
  \draw[fill=red]  (N21) circle(2pt);
  \node[above right= 12pt,red](txt) at (N21) {$N21$};
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 \Iopt{tkzTabImaFrom}{draw}
 
 \subsubsection{Utilisation d'un point défini  par l'utilisateur avec \texttt{\textcolor{red}{remember}}}
@@ -165,7 +165,7 @@ Il s'agit ici de \tkzname{N21}. C'est un node, plus exactement un point situé s
 	\begin{tikzpicture}
 	\tkzTabInit[lgt=3,espcl=6]{ $x$/1, $f'(x)$/1, $f(x)$/3,/3 }%
 	           {  $a$    , $d$    ,$e$}
-	\tkzTabLine{  z,+    ,z,-     ,z  } 
+	\tkzTabLine{  z,+    ,z,-     ,z  }
 	\tkzTabVar  {-/\va  ,+/\vd   , -/  \ve}
 	\tkzTabVal[draw,remember=vb]{1}{2}{0.333}{b}{$0$}
 	\tkzTabVal[draw,remember=vc]{1}{2}{0.666}{c}{$1$}

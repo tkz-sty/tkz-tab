@@ -1,5 +1,5 @@
 \section{Valeurs intermédiaires \addbs{tkzTabVal}}
-Cette macro permet de placer une valeur sur une flèche de la ligne des variations. Elle doit être employée juste après la commande \tkzcname{tkzTabVar} définissant la ligne de variations sur laquelle on souhaite placer les valeurs intermédiaires. On ne peut placer une valeur que dans un intervalle où la fonction est \tkzname{monotone}. Cette macro permet d'afficher une nouvelle valeur (intermédiaire) dans la première ligne. 
+Cette macro permet de placer une valeur sur une flèche de la ligne des variations. Elle doit être employée juste après la commande \tkzcname{tkzTabVar} définissant la ligne de variations sur laquelle on souhaite placer les valeurs intermédiaires. On ne peut placer une valeur que dans un intervalle où la fonction est \tkzname{monotone}. Cette macro permet d'afficher une nouvelle valeur (intermédiaire) dans la première ligne.
 
 \subsection{Définition de   \addbs{tkzTabVal}}
 
@@ -34,7 +34,7 @@ Cette macro permet de placer une valeur sur une flèche de la ligne des variatio
 \noindent\emph{Si vous  voulez  une flèche entre l'antécédent et l'image, il vous suffit de passer en option  \tkzname{draw}. Si vous voulez référencer le point où se situe l'image alors il faut utiliser l'option \tkzname{remember}.}
 \end{NewMacroBox}
 
-\subsubsection{Ajout de valeurs intermédiaires} 
+\subsubsection{Ajout de valeurs intermédiaires}
 
 Le premier exemple montre des valeurs remarquables pour la fonction $\ln$. Il s'agit de mettre en évidence des valeurs importantes pour la fonction. La fonction est monotone  entre les valeurs de rang $1$ ($0$) et $2$ ($+\infty$), ainsi les deux premiers arguments sont $1$  et $2$. Les coefficients utilisés pour  \tkzname{Position} sont des nombres \tkzname{décimaux} ici $0.33$ et $0.66$. Les antécédents n'étaient pas présents dans la première ligne aussi leurs valeurs sont passées dans les arguments.
 
@@ -54,9 +54,9 @@ Le premier exemple montre des valeurs remarquables pour la fonction $\ln$. Il s'
 \end{tikzpicture}
 \end{tkzexample}
 
-\subsubsection{Ajout de valeurs intermédiaires avec une fonction non monotone } 
+\subsubsection{Ajout de valeurs intermédiaires avec une fonction non monotone }
 
-On ne peut utiliser la macro que sur un intervalle où la fonction est monotone, ici il y a trois valeurs 
+On ne peut utiliser la macro que sur un intervalle où la fonction est monotone, ici il y a trois valeurs
 \mbox{$0$, $\E$ et $+\infty$}. La fonction est monotone entre les deux premières c'est à dire entre  les valeurs de rang $1$ et $2$ ainsi qu'entre les deux dernières de rang $2$ et $3$.
 
 \begin{tkzexample}[vbox,small]
@@ -70,11 +70,11 @@ On ne peut utiliser la macro que sur un intervalle où la fonction est monotone,
 \end{tikzpicture}
 \end{tkzexample}
 
-\subsubsection{Ajout de valeurs intermédiaires  avec un palier} 
+\subsubsection{Ajout de valeurs intermédiaires  avec un palier}
 
 Il ne faut pas s'arrêter au deuxième antécédent. La fonction est  monotone mais admet un palier. L'option \tkzname{R} permet d'éviter qu'une flèche s'arrête pour $\sqrt\E$. La flèche va donc de la valeur de rang $1$ à la valeur de rang $3$. Le code est donc :
 \begin{tkzexample}[code only]
-  \tkzTabVal[draw]{1}{3}{0.6}{\E}{$\dfrac{-1}{\E}$} 
+  \tkzTabVal[draw]{1}{3}{0.6}{\E}{$\dfrac{-1}{\E}$}
 \end{tkzexample}
 
 \begin{tkzexample}[vbox,small]
@@ -94,22 +94,22 @@ Il ne faut pas s'arrêter au deuxième antécédent. La fonction est  monotone m
 Les variations de  $f$ et $f'$ sont représentées. Pour $f$ la valeur $1$ n'est pas utilisée, on passe donc du rang $1$ au rang $3$.
 
 \begin{tkzexample}[vbox,small]
-\begin{tikzpicture} 
+\begin{tikzpicture}
   \tkzTabInit[espcl=6]{$x$/1,$f''(x)$/1,$f'(x)$/3,$f(x)$/3}
-  {$0$,$1$,$+\infty$}% 
+  {$0$,$1$,$+\infty$}%
   \tkzTabLine{d,+,0,-, }%
   \tkzTabVar{-/ $-\infty$ ,+/ ,-/ $-\infty$ }
   \tkzTabVal[draw]{1}{2}{0.3}{$0,3$}{$-2$}
-  \tkzTabVal[draw]{2}{3}{0.6}{$4$}{$-1$} 
-  \tkzTabVar{+/ $+\infty$,R ,-/ $-1$} 
+  \tkzTabVal[draw]{2}{3}{0.6}{$4$}{$-1$}
+  \tkzTabVar{+/ $+\infty$,R ,-/ $-1$}
   \tkzTabVal[draw]{1}{3}{0.6}{$2$}{$0$}
-\end{tikzpicture}  
+\end{tikzpicture}
 \end{tkzexample}
- 
+
 \subsection{Utilisation des options}
 
 \subsubsection{\texttt{\textcolor{red}{draw}} : ajout d'une flèche vers la valeur ajoutée}\Iopt{tkzTabVal}{draw}
-L'option a déjà été utilisée dans les exemples précédents, en voici un autre. 
+L'option a déjà été utilisée dans les exemples précédents, en voici un autre.
 
 \begin{tkzexample}[vbox,small]
 \begin{tikzpicture}
@@ -144,16 +144,16 @@ Cette option permet d'utiliser \tkzcname{tkzTabImaFrom} mais il est possible de 
   \begin{tikzpicture}
   \tkzTabInit[lgt=3,espcl=6]{ $x$/1,/1,/3,/3 }%
              {  $a$    , $d$    ,$e$}
-  \tkzTabLine{  z,+    ,z,-     ,z  } 
+  \tkzTabLine{  z,+    ,z,-     ,z  }
   \tkzTabVar  {-/\va  ,+/\vd   , -/  \ve}
-  
+
   \tkzTabVal[draw,remember=vb]{1}{2}{0.333}{$b$}{$0$}
   \tkzTabVal[draw,remember=vc]{1}{2}{0.666}{$c$}{$1$}
-  
+
   \tkzTabVar{-/\va  ,R/   , +/  \ve}
-  
+
   \tkzTabVal[draw]{1}{3}{0.5}{}{$0$}
-  
+
   \draw[opacity=0.4,fill=red!20]  (vb) circle(3ex);
   \draw[opacity=0.4,fill=blue!20]  (vc) circle(3ex);
   \end{tikzpicture}

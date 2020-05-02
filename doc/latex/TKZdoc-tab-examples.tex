@@ -19,15 +19,15 @@ L'exemple suivant provient de la documentation de l'excellent \tkzname{tablor.st
     \tkzTabLine { ,+,z,-,z,+, }
   \end{tikzpicture}
 \end{tkzexample}
- 
+
 
 \subsection{Variations de fonctions}
  \subsubsection{Variation d'une fonction rationnelle}
- 
+
  Cet exemple a été cité dans la documentation du package \tkzname{tabvar}
 
  Étude de la fonction $f~:~ x \longmapsto \frac{x^3+2}{2x}$ sur $]-\infty~;~+\infty[$
- 
+
 \begin{tkzexample}[vbox,small]
 \begin{tikzpicture}
   \tkzTabInit[]
@@ -37,16 +37,16 @@ L'exemple suivant provient de la documentation de l'excellent \tkzname{tablor.st
 \tkzTabVar{+/$+\infty$ ,-D+/$-\infty$ / $+\infty$ ,-/$\frac{3}{2}$, +/$+\infty$}
 \tkzTabVal{1}{2}{0.4}{$ -\sqrt[3]{2}$}{$0$}
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 
 
 \subsubsection{Variation d'une fonction irrationnelle}
- 
+
 Autre exemple  cité dans la documentation du package \tkzname{tabvar}
 
 Étude de la fonction $f~:~ x \longmapsto \sqrt{\frac{x-1}{x+1}}$ sur $]-\infty~;~-1[\cup ]1~;~+\infty[$
 
-\begin{tkzexample}[vbox,small] 
+\begin{tkzexample}[vbox,small]
 \begin{tikzpicture}
   \tkzTabInit[]
   {$x$  /1, $f'(x)$ /1,$f$  /3}
@@ -55,11 +55,11 @@ Autre exemple  cité dans la documentation du package \tkzname{tabvar}
 \tkzTabSlope{ 3/ /+\infty}
 \tkzTabVar{-/$1$ ,+DH/$+\infty$  ,-/$0$, +/$1$}
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 
 Un prolongement par continuité pourrait être : $f(x)=0$ sur $[-1~;~1]$ alors le tableau deviendrait
 
-\begin{tkzexample}[vbox,small] 
+\begin{tkzexample}[vbox,small]
 \begin{tikzpicture}
   \tkzTabInit[]
   {$x$  /1, $f'(x)$ /1,$f$  /3}
@@ -68,7 +68,7 @@ Un prolongement par continuité pourrait être : $f(x)=0$ sur $[-1~;~1]$ alors l
 \tkzTabSlope{ 3/ /+\infty}
 \tkzTabVar{-/$1$ ,+D-/$+\infty$/$0$  ,-/$0$, +/$1$}
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 
 
 \subsection{Fonctions trigonométriques}
@@ -76,7 +76,7 @@ Un prolongement par continuité pourrait être : $f(x)=0$ sur $[-1~;~1]$ alors l
  \subsubsection{Variation de la fonction tangente}
   \NameFonct{Fonction  tangente}
  Étude de la fonction $f~:~ x \longmapsto \tan{x}$ sur $[0~;\pi]$
- 
+
  \begin{tkzexample}[vbox]
 \begin{tikzpicture}
 \tkzTabInit[espcl=6]{$x$ / 1,Signe de\\f'(x)/1, Variations de\\ $f$ / 3}%
@@ -86,12 +86,12 @@ Un prolongement par continuité pourrait être : $f(x)=0$ sur $[-1~;~1]$ alors l
 \tkzTabVal{1}{2}{0.5}{$\frac{\pi}{4}$}{$1$}
 \tkzTabVal{2}{3}{0.5}{$\frac{3\pi}{4}$}{$1$}
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 
 \subsubsection{Variation de la fonction cosinus}
  \NameFonct{Fonction  cosinus}
   Étude de la fonction $f~:~ x \longmapsto \cos{x}$ sur $[-\pi~;~+\pi]$
-  
+
  \begin{tkzexample}[vbox]
 \begin{tikzpicture}
 \tkzTabInit[espcl=6]{$x$ / 1,Signe de\\f'(x)/1, Variations de\\ $f$ / 3}%
@@ -100,19 +100,19 @@ Un prolongement par continuité pourrait être : $f(x)=0$ sur $[-1~;~1]$ alors l
 \tkzTabVar{+/$1$ ,   -/$-1$ }
 \tkzTabVal{1}{2}{0.5}{$\frac{\pi}{2}$}{$0$}
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 
 \subsection{Fonctions paramétrées et trigonométriques}
 \NameFonct{Fonctions paramétrées} \NameFonct{Fonctions trigonométriques}
 
 Étude sur $\left[0~;~\frac{\pi}{2}\right]$
- \begin{equation*} 
+ \begin{equation*}
 \left\{%
-\begin{array}{l} 
- x(t) = \cos(3t)\\ 
+\begin{array}{l}
+ x(t) = \cos(3t)\\
  y(t) = \sin(4t)
-\end{array}\right. 
-\end{equation*} 
+\end{array}\right.
+\end{equation*}
 
 \begin{tkzexample}[vbox,small]
   \begin{tikzpicture}
@@ -127,10 +127,10 @@ Un prolongement par continuité pourrait être : $f(x)=0$ sur $[-1~;~1]$ alors l
   \tkzTabLine {z , - ,-3\sin\left(\frac{3\pi}{8}\right) , - , z , +  ,%
    3\sin\left(\frac{\pi}{8}\right),+,3}
    \tkzTabVar  { +/$1$ , R/    , -/$-1$/ , R/     , +/$0$ }
-    \tkzTabIma{1}{3}{2}{$\cos\left(\frac{3\pi}{8}\right)$} 
-   \tkzTabIma{3}{5}{4}{$-\cos\left(\frac{\pi}{8}\right)$} 
+    \tkzTabIma{1}{3}{2}{$\cos\left(\frac{3\pi}{8}\right)$}
+   \tkzTabIma{3}{5}{4}{$-\cos\left(\frac{\pi}{8}\right)$}
      \tkzTabVar  { -/$0$ , +/$1$ , R/      , -/$-1$ , +/$0$ }
-   \tkzTabIma{2}{4}{3}{$\frac{-\sqrt{3}}{2}$} 
+   \tkzTabIma{2}{4}{3}{$\frac{-\sqrt{3}}{2}$}
    \tkzTabLine {4 , + , z , - , -2 , - ,  z ,+,4}
  \end{tikzpicture}
 \end{tkzexample}
@@ -147,7 +147,7 @@ Une petite astuce, en principe \tkzname{z}  est le symbole à mettre dans la lis
   où $a$ et $b$ sont deux constantes réelles.
 
   Les renseignements connus sur $f$ sont donnés dans le tableau de variation ci-dessous.
-   
+
   \medskip
   \begin{center}
     \begin{tikzpicture}
@@ -156,7 +156,7 @@ Une petite astuce, en principe \tkzname{z}  est le symbole à mettre dans la lis
     {,, z ,,}%
      {+/    $-3$  ,
       -/          ,
-      +/          } 
+      +/          }
     \end{tikzpicture}
   \end{center}
 
@@ -169,12 +169,12 @@ Une petite astuce, en principe \tkzname{z}  est le symbole à mettre dans la lis
              \item Calculer $f(0)$ et calculer la limite de $f$ en $+\infty$.
              \item Compléter, après l'avoir reproduit, le tableau de variations de $f$.
              \end{enumerate}
-      \item Résoudre dans $\mathbf{R}$ l'équation 
+      \item Résoudre dans $\mathbf{R}$ l'équation
       \[
           \E^x(\E^x-2)-3=0
       \]
       (on pourra pose $X=\E^x$).
-      \item Résoudre dans $\mathbf{R}$ les inéquations : 
+      \item Résoudre dans $\mathbf{R}$ les inéquations :
       \[
           \E^x(\E^x-2)-3\geq -4
       \]
@@ -193,7 +193,7 @@ Une petite astuce, en principe \tkzname{z}  est le symbole à mettre dans la lis
   où $a$ et $b$ sont deux constantes réelles.
 
   Les renseignements connus sur $f$ sont donnés dans le tableau de variation ci-dessous.
-   
+
   \medskip
   \begin{center}
     \begin{tikzpicture}
@@ -202,7 +202,7 @@ Une petite astuce, en principe \tkzname{z}  est le symbole à mettre dans la lis
     {,, z ,,}%
      {+/    $-3$  ,
       -/          ,
-      +/          } 
+      +/          }
     \end{tikzpicture}
   \end{center}
 
@@ -215,12 +215,12 @@ Une petite astuce, en principe \tkzname{z}  est le symbole à mettre dans la lis
              \item Calculer $f(0)$ et calculer la limite de $f$ en $+\infty$.
              \item Compléter, après l'avoir reproduit, le tableau de variations de $f$.
              \end{enumerate}
-      \item Résoudre dans $\mathbf{R}$ l'équation 
+      \item Résoudre dans $\mathbf{R}$ l'équation
       \[
           \E^x(\E^x-2)-3=0
       \]
       (on pourra pose $X=\E^x$).
-      \item Résoudre dans $\mathbf{R}$ les inéquations : 
+      \item Résoudre dans $\mathbf{R}$ les inéquations :
       \[
           \E^x(\E^x-2)-3\geq -4
       \]
@@ -263,13 +263,13 @@ Une petite astuce, en principe \tkzname{z}  est le symbole à mettre dans la lis
 	\begin{enumerate}
 	\item En utilisant les données du tableau déterminer les valeurs $a$ et $b$ qui caractérisent
 	 cette fonction.
-	\item Pour cette fonction particulière $f$, déterminer 
+	\item Pour cette fonction particulière $f$, déterminer
 	        $\displaystyle \lim_{x \xrightarrow[x<0]{} 0} f(x)$.
 	\item Montrer que, dans l'intervalle $\Big[\dfrac{-1}{2}~;~0,01\Big]$, l'équation $f(x)=0$
 	 admet une solution unique. En donner une valeur approchée à $10^{-3}$ près.
 	\end{enumerate}
 	\end{enumerate}
-	
+
 \begin{tkzexample}[small,code only]
 	On considère la fonction $f$ définie sur $]-\infty~;~0[$ :
 
@@ -299,7 +299,7 @@ Une petite astuce, en principe \tkzname{z}  est le symbole à mettre dans la lis
 	\begin{enumerate}
 	\item En utilisant les données du tableau déterminer les valeurs $a$ et $b$ qui caractérisent
 	 cette fonction.
-	\item Pour cette fonction particulière $f$, déterminer 
+	\item Pour cette fonction particulière $f$, déterminer
 	        $\displaystyle \lim_{x \xrightarrow[x<0]{} 0} f(x)$.
 	\item Montrer que, dans l'intervalle $\Big[\dfrac{-1}{2}~;~0,01\Big]$, l'équation $f(x)=0$
 	 admet une solution unique. En donner une valeur approchée à $10^{-3}$ près.
@@ -329,12 +329,12 @@ On considère une fonction $f$ de la variable $x$, dont on donne le tableau de v
 \end{center}
 
 On appelle (C) la courbe représentative de $f$ dans un repère Le plan est muni d'un repère orthonormé $(O;\vec{\imath};\vec{\jmath})$ (unités graphiques 2 cm sur chaque axe)
- 
+
 \vspace{6pt}
 \textbf{Première partie}
 
 En interprétant le tableau donné ci-dessus :%
- 
+
  \begin{enumerate}
  \item  Préciser l'ensemble de définition de $f$.
  \item  Placer dans le repère $(O;\vec{\imath};\vec{\jmath})$  :
@@ -388,7 +388,7 @@ On appelle (C) la courbe représentative de $f$ dans un repère. Le plan est mun
 \textbf{Première partie}
 
 En interprétant le tableau donné ci-dessus :%
- 
+
  \begin{enumerate}
  \item  Préciser l'ensemble de définition de $f$.
  \item  Placer dans le repère $(O;\vec{\imath};\vec{\jmath})$  :
@@ -483,7 +483,7 @@ Tableau 3 (inverse) :
 \bigskip
 
 Tableau 4 (\(f(x)=\dfrac{x^2+4}{x}\)):
-\begin{tkzexample}[vbox,small]		
+\begin{tkzexample}[vbox,small]
 \begin{tikzpicture}
 \tkzTabInit[]{\(x$/1,$f'(x)\)/1,\(f(x)\)/2}{\(-\infty\),\(-2\),\(0\),2,\(+\infty\)}
 \tkzTabLine{,+,z,-,d,-,z,+,}
@@ -561,7 +561,7 @@ Cette modification n'est pas prévue. Une astuce consiste à intoduire des colon
 
 \begin{tkzexample}[vbox,small]
   \begin{tikzpicture}
-      \tikzset{t style/.style = {style = densely dashed}} 
+      \tikzset{t style/.style = {style = densely dashed}}
       \tkzTabInit[lgt=4, espcl = 1.2, lw = 0.5pt, deltacl=0]
       { / 0.7 , $x(x^2-5x+4)$ / 1}{ ,$0$, $1$, , $4$,}
       \tkzTabLine{,-,t,+,t,,-,,t, +,}

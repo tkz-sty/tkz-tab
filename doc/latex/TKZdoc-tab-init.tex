@@ -7,7 +7,7 @@
 
 \begin{tabular}{lllc}
 \toprule
-arguments &  défaut  & définition                 \\ 
+arguments &  défaut  & définition                 \\
 \midrule
 \TAline{liste1} {no default }  {\var{e(1)/h(1),...,e(p)/h(p)} }
 \TAline{liste2} {no default }  {\var{a(1),...,a(n)}}
@@ -23,14 +23,14 @@ arguments &  défaut  & définition                 \\
 
 \item Liste 2 : \emph{On ne peut pas utiliser les symboles \og \tkzname{/} \fg\ et \og \tkzname{,} \fg\   dans \tkzname{e(i)} sauf si on les protège dans un groupe\protect\footnotemark. La protection de la virgule par une paire d'accolades |\{4,5\}| peut avantageusement être remplacée par une commande comme \tkzcname{numprint\{4,5\}} ou encore \tkzcname{np\{4,5\}}\protect\footnotemark.}
  \end{itemize}
-\NamePack{numprint}   
+\NamePack{numprint}
 
 \medskip
 \begin{tabular}{lllc}
 \toprule
-options             & défaut & définition                         \\ 
+options             & défaut & définition                         \\
 \midrule
-\TOline{espcl}  {2 cm}{espacement entre deux valeurs                  } 
+\TOline{espcl}  {2 cm}{espacement entre deux valeurs                  }
 \TOline{lgt}     { 2 cm}{largeur de la première colonne                }
 \TOline{deltacl}{0.5 cm}{marge avant le premier et le dernier antécédent}
 \TOline{lw}    {0.4 pt}{épaisseur des lignes  du tableau                }
@@ -61,7 +61,7 @@ Exemple : \begin{tkzexample}[code only]\tikz \tkzTabInit{$x$ /.8 , $f(x)$ /.8}{$
   \tikz \tkzTabInit{$x$ /.8 , $f(x)$ /.8}{$0$ , $+\infty$};
 \end{center}
 \subsubsection{Ajout de lignes et de colonnes}
-                                                                   
+
 La première liste permet d'obtenir trois lignes qui ont pour hauteur  $1$ cm. La seconde liste comporte trois antécédents qui déterminent deux intervalles (zones). Il sera possible de placer des filets verticaux sous ces antécédents.
 
 \begin{tkzexample}[width=10cm,small]
@@ -83,7 +83,7 @@ Le premier  argument est \tkzname{ /1}, c'est l'argument minimum. L'argument est
  \tkzTabInit{  / 1}
             {  ,  }
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 
 \subsection{Utilisation des options}
 
@@ -94,7 +94,7 @@ Tout d'abord on peut modifier certaines dimensions concernant les colonnes. Voyo
      \tkzTabInit
         {$x$ /  1}
         {$a_1$ ,  $a_2$ , $a_3$}
-    \begin{scope}[arstyle/.style={>=latex,#1,<->}] 
+    \begin{scope}[arstyle/.style={>=latex,#1,<->}]
       \draw[arstyle=blue] (N10) to node[above,color=blue]%
            {\scriptsize $ espcl = 2$ cm} (N20);
       \draw[arstyle=blue] (N20) to node[above,color=blue]%
@@ -109,7 +109,7 @@ Tout d'abord on peut modifier certaines dimensions concernant les colonnes. Voyo
   \end{tikzpicture}
 \end{center}
 
- 
+
 \subsubsection{\texttt{\textcolor{red}{lgt}} : modification de la largeur de la première colonne}\Iopt{tkzTabInit}{lgt}
 
 Par défaut la largeur de cette première colonne est de $2$ cm. L'unité est toujours le \tkzname{cm}.
@@ -119,27 +119,27 @@ Par défaut la largeur de cette première colonne est de $2$ cm. L'unité est to
   \tkzTabInit[lgt=3]{ $x$ / 1}
                     { $1$  , $3$ }
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 
 \subsubsection{\texttt{\textcolor{red}{espcl}} : modification de l'espacement entre deux valeurs}\Iopt{tkzTabInit}{espcl}
 
 \begin{tkzexample}[width=9cm,small]
 \begin{tikzpicture}
-   \tkzTabInit[lgt=3,espcl=4]% 
+   \tkzTabInit[lgt=3,espcl=4]%
     { $x$ / 1}
     { $1$ , $4$  }
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 
 \subsubsection{\texttt{\textcolor{red}{deltacl}} : modification des espacements aux extrémités}\Iopt{tkzTabInit}{deltacl}
 
 \begin{tkzexample}[width=9cm,small]
 \begin{tikzpicture}
-  \tkzTabInit[lgt=3,deltacl=1]% 
+  \tkzTabInit[lgt=3,deltacl=1]%
   { $x$ / 1}
   { $1$ , $4$ }
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 
 \subsubsection{\texttt{\textcolor{red}{lw}} : épaisseur des lignes du tableau}
 \Iopt{tkzTabInit}{lw}
@@ -150,7 +150,7 @@ Ce n'est pas recommandé. Il est préférable que tous les traits d'un document 
   \tkzTabInit[lw=2pt]{ / 1}
                     { , }
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 
 \subsubsection{\texttt{\textcolor{red}{nocadre}} : suppression du cadre externe}
 \Iopt{tkzTabInit}{nocadre}
@@ -160,7 +160,7 @@ Ce n'est pas recommandé. Il est préférable que tous les traits d'un document 
   \tkzTabInit[nocadre]{ / 1, /1, /1}
                       { , }
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 
 \subsubsection{\texttt{\textcolor{red}{color}} : utilisation de la couleur dans un tableau}
 \Iopt{tkzTabInit}{color}\NamePack{amsmath}
@@ -177,7 +177,7 @@ Ce n'est pas recommandé. Il est préférable que tous les traits d'un document 
               colorV = lightgray!20]
              { /1 , /1}{ , }
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 
 \begin{tkzexample}[width=8cm]
 \begin{tikzpicture}
@@ -186,15 +186,15 @@ Ce n'est pas recommandé. Il est préférable que tous les traits d'un document 
              colorC = red!20,
              colorL = green!20,
              colorV = lightgray!20,
-             lgt    = 1, 
+             lgt    = 1,
              espcl  = 2.5]%
    {$t$/1,$a$/1,$b$/1,$c$/1,$d$/1}%
    {$\alpha$,$\beta$,$\gamma$}%
 \end{tikzpicture}
-\end{tkzexample}   
+\end{tkzexample}
 
 \subsubsection{\texttt{\textcolor{red}{help}} : Affiche la structure du tableau}
-\Iopt{tkzTabInit}{help}    
+\Iopt{tkzTabInit}{help}
 Voir la section \og personnalisation \fg\ (\ref{pers}).
 \endinput
 

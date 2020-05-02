@@ -38,7 +38,7 @@
 %<-------------------------------------------------------------------------->
 \tikzset{node style/.style  = {inner sep   =  \tkzTabDefaultSep,
                                outer sep   =  \tkzTabDefaultSep,
-                               fill        =  \tkzTabDefaultBackgroundColor}} 
+                               fill        =  \tkzTabDefaultBackgroundColor}}
 \tikzset{low left/.style    = {above left  =  \tkzTabDefaultSep}}
 \tikzset{low right/.style   = {above right =  \tkzTabDefaultSep}}
 \tikzset{high right/.style  = {below right =  \tkzTabDefaultSep}}
@@ -93,18 +93,18 @@
 \newcounter{tkz@cnt@aw}
 %<--------------------------------------------------------------------------->
 \define@cmdkey  [TAB] {TTC} {color}{}
-\define@cmdkey  [TAB] {TTC} {backgroundcolor}{} 
+\define@cmdkey  [TAB] {TTC} {backgroundcolor}{}
 \presetkeys     [TAB] {TTC} {color            = black,
                              backgroundcolor  = white}{}
-\newcommand*{\tkzTabColors}[1][]{% 
+\newcommand*{\tkzTabColors}[1][]{%
 \setkeys[TAB]{TTC}{#1}
 \let\tkzTabDefaultWritingColor\cmdTAB@TTC@color
 \let\tkzTabDefaultBackgroundColor\cmdTAB@TTC@backgroundcolor
 \let\cmdTAB@backgroundcolor\cmdTAB@TTC@backgroundcolor
 \let\cmdTAB@writecolor\cmdTAB@TTC@color
-\let\cmdTAB@doublecolor\cmdTAB@TTC@backgroundcolor 
+\let\cmdTAB@doublecolor\cmdTAB@TTC@backgroundcolor
 \let\cmdTAB@patterncolor\cmdTAB@TTC@color
-\let\cmdTAB@tcolor\cmdTAB@TTC@color 
+\let\cmdTAB@tcolor\cmdTAB@TTC@color
 \tikzset{fondC/.style={fill = \tkzTabDefaultBackgroundColor}}
 \tikzset{fondL/.style={fill = \tkzTabDefaultBackgroundColor}}
 \tikzset{fondT/.style={fill = \tkzTabDefaultBackgroundColor}}
@@ -112,14 +112,14 @@
 }
 %<--------------------------------------------------------------------------->
 %<--------------------------------------------------------------------------->
-\define@boolkey [TAB] {TTS} {crosslines}[true]{}   
-\define@cmdkey  [TAB] {TTS} {doubledistance}{} 
-\define@cmdkey  [TAB] {TTS} {lw}{} 
+\define@boolkey [TAB] {TTS} {crosslines}[true]{}
+\define@cmdkey  [TAB] {TTS} {doubledistance}{}
+\define@cmdkey  [TAB] {TTS} {lw}{}
 \define@cmdkey  [TAB] {TTS} {doublecolor}{}
 \define@cmdkey  [TAB] {TTS} {color}{}
 \define@cmdkey  [TAB] {TTS} {backgroundcolor}{}
 \define@cmdkey  [TAB] {TTS} {patterncolor}{}
-\define@cmdkey  [TAB] {TTS} {patternstyle}{} 
+\define@cmdkey  [TAB] {TTS} {patternstyle}{}
 \define@cmdkey  [TAB] {TTS} {tstyle}{}
 \define@cmdkey  [TAB] {TTS} {tcolor}{}
 \define@cmdkey  [TAB] {TTS} {tanstyle}{}
@@ -130,10 +130,10 @@
 \define@cmdkey  [TAB] {TTS} {fromarrowstyle}{}
 \define@cmdkey  [TAB] {TTS} {fromcolor}{}
 \define@cmdkey  [TAB] {TTS} {fromwidth}{}
-\define@cmdkey  [TAB] {TTS} {twidth}{}  
-\define@cmdkey  [TAB] {TTS} {hcolor}{} 
-\define@cmdkey  [TAB] {TTS} {hopacity}{}  
-\define@cmdkey  [TAB] {TTS} {arrowcolor}{}  
+\define@cmdkey  [TAB] {TTS} {twidth}{}
+\define@cmdkey  [TAB] {TTS} {hcolor}{}
+\define@cmdkey  [TAB] {TTS} {hopacity}{}
+\define@cmdkey  [TAB] {TTS} {arrowcolor}{}
 \define@cmdkey  [TAB] {TTS} {arrowstyle}{}
 \define@cmdkey  [TAB] {TTS} {arrowlinewidth}{}
 %<--------------------------------------------------------------------------->
@@ -142,14 +142,14 @@
                              lw               = \tkzTabDefaultLineWidth,
                              color            = \tkzTabDefaultWritingColor,
                              backgroundcolor  = \tkzTabDefaultBackgroundColor,
-                             patterncolor     = \tkzTabDefaultWritingColor, 
+                             patterncolor     = \tkzTabDefaultWritingColor,
                              patternstyle     = north west lines,
                              tstyle           = dotted,
                              tcolor           = \tkzTabDefaultWritingColor,
                              tanarrowstyle    = \tkzTabDefaultArrowStyle,
                              tanstyle         = ->,
                              tancolor         = \tkzTabDefaultWritingColor,
-                             tanwidth         = \tkzTabDefaultLineWidth, 
+                             tanwidth         = \tkzTabDefaultLineWidth,
                              fromarrowstyle   = \tkzTabDefaultArrowStyle,
                              fromstyle        = ->,
                              fromcolor        = \tkzTabDefaultWritingColor,
@@ -189,7 +189,7 @@
 \tikzset{fondL/.style={fill = \cmdTAB@TTS@backgroundcolor}}
 \tikzset{fondT/.style={fill = \cmdTAB@TTS@backgroundcolor}}
 \tikzset{fondV/.style={fill = \cmdTAB@TTS@backgroundcolor}}
-\ifTAB@TTS@crosslines% 
+\ifTAB@TTS@crosslines%
   \tikzset{h style/.style = {pattern    = north west lines,
                              pattern color = \cmdTAB@TTS@patterncolor}}
 \else
@@ -215,7 +215,7 @@
                              lgt      = 2,
                              textw    = \cmdTAB@tbs@lgt,
                              lw       = \tkzTabDefaultLineWidth,
-                             colorC   = \tkzTabDefaultBackgroundColor, 
+                             colorC   = \tkzTabDefaultBackgroundColor,
                              colorL   = \tkzTabDefaultBackgroundColor,
                              colorT   = \tkzTabDefaultBackgroundColor,
                              colorV   = \tkzTabDefaultBackgroundColor,
@@ -299,7 +299,7 @@
         \ifTAB@tbs@help%
         \draw[fill=green!30!black] (M\m\number\value{tkz@cnt@lg}) circle(2pt)%
          node[below right,green!30!black] {%
-         \footnotesize M\m\number\value{tkz@cnt@lg}}; 
+         \footnotesize M\m\number\value{tkz@cnt@lg}};
         \fi
         }%
     \pgfmathdivide{\cmdTAB@tbs@lgt}{2}%
@@ -311,12 +311,12 @@
     \setcounter{tkz@cnt@temp}{\thetkz@cnt@lg}%
     \addtocounter{tkz@cnt@temp}{-1}%
     \path (\tkz@tab@dx,\tkz@tab@dy) coordinate(F\thetkz@cnt@temp);}%
-% 
+%
 %<--------------------- Colorisation du fond ------------------------------>
 \tikzset{fondC/.style={fill = \cmdTAB@tbs@colorC}}
 \tikzset{fondL/.style={fill = \cmdTAB@tbs@colorL}}
 \tikzset{fondT/.style={fill = \cmdTAB@tbs@colorT}}
-\tikzset{fondV/.style={fill = \cmdTAB@tbs@colorV}}  
+\tikzset{fondV/.style={fill = \cmdTAB@tbs@colorV}}
 \ifTAB@tbs@color
   \draw[fondC] (T01) rectangle (T1\maxtkz@cnt@lg);
   \draw[fondL] (T11) rectangle (T20);
@@ -324,13 +324,13 @@
   \draw[fondV] (T00) rectangle (T11);
 \fi
 %<-------------------Fin  Colorisation du fond ------------------------------>
-% 
+%
 %<--------------- Écriture des formules en colonne 1  --------------------->
 \setcounter{tkz@cnt@lg}{-1}%
 \pgfmathsubtract{\cmdTAB@tbs@textw}{0.4}%
 \xdef\cmdTAB@tbs@textw{\pgfmathresult}%
 \foreach \ligne/\tkz@deltaH in {#2}{%
-\stepcounter{tkz@cnt@lg}% 
+\stepcounter{tkz@cnt@lg}%
 \ifTAB@tbs@help%
 \node[draw,fill=green!50,inner sep=1pt] at (F\number\value{tkz@cnt@lg}) {\footnotesize  F\thetkz@cnt@lg};
 \else
@@ -341,13 +341,13 @@
 \draw[line width = \cmdTAB@tbs@lw] (T10) --(T1\maxtkz@cnt@lg);
 \setcounter{tkz@cnt@temp}{\maxtkz@cnt@lg}%
 \addtocounter {tkz@cnt@temp}{-1}%
-\xdef\maxtkz@cnt@lg{\thetkz@cnt@temp}% 
+\xdef\maxtkz@cnt@lg{\thetkz@cnt@temp}%
 \foreach \y in {1,...,\maxtkz@cnt@lg}{\draw[line width = \cmdTAB@tbs@lw] (T0\y) --(T2\y);}%
 \else
 \foreach \y in {1,...,\maxtkz@cnt@lg}{\draw[line width = \cmdTAB@tbs@lw] (T0\y) --(T2\y);}%
-\draw[line width = \cmdTAB@tbs@lw] (T00) rectangle (T2\maxtkz@cnt@lg); 
-\draw[line width = \cmdTAB@tbs@lw] (T10) -- (T1\maxtkz@cnt@lg); 
-\fi 
+\draw[line width = \cmdTAB@tbs@lw] (T00) rectangle (T2\maxtkz@cnt@lg);
+\draw[line width = \cmdTAB@tbs@lw] (T10) -- (T1\maxtkz@cnt@lg);
+\fi
 %<------------ Première ligne et Nodes variations  -------------------------->
 \setcounter{tkz@cnt@cl}{0}%
 \pgfextractx{\tkz@XF}{\pgfpointanchor{F0}{center}}%
@@ -356,8 +356,8 @@
 \pgfmathparse{\cmdTAB@tbs@deltacl+\cmdTAB@tbs@lgt/2+%
               \cmdTAB@tbs@espcl*\thetkz@cnt@cl}%
     \global\let\tkz@tab@dx\pgfmathresult
-    \stepcounter{tkz@cnt@cl}% 
-    \ifTAB@tbs@help%  
+    \stepcounter{tkz@cnt@cl}%
+    \ifTAB@tbs@help%
     \node[draw,fill=blue!50,inner sep=1pt] (L\number\value{tkz@cnt@cl})%
         at (\tkz@XF + \tkz@tab@dx cm,\tkz@YF) {\footnotesize L\number\value{tkz@cnt@cl}};%
     \else
@@ -396,14 +396,14 @@
 %<--------------------------------------------------------------------------->
 \newcommand{\tkzTabLine}[2][]{%
  \makeatletter
- \setkeys[TAB]{TL}{#1}%   
+ \setkeys[TAB]{TL}{#1}%
  \setcounter{tkz@cnt@lg}{\thetkz@cnt@line}%
  \stepcounter{tkz@cnt@line}%
  \setcounter{tkz@cnt@lgnext}{\thetkz@cnt@line}%
  \setcounter{tkz@cnt@cl}{1}%
  \setcounter{tkz@cnt@pair}{1}%
  \setcounter{tkz@cnt@impair}{1}%
- \ifTAB@TL@help% 
+ \ifTAB@TL@help%
  \foreach \x in {#2}
    {
    \ifthenelse{\isodd{\value{tkz@cnt@cl}}}{%
@@ -411,14 +411,14 @@
            node[draw,inner sep =1pt,midway,fill=yellow]%
             {\footnotesize Z\thetkz@cnt@impair\thetkz@cnt@lg}%
          (N\thetkz@cnt@impair\thetkz@cnt@lgnext);
-         \stepcounter{tkz@cnt@impair}}{%   
+         \stepcounter{tkz@cnt@impair}}{%
    \path (M\thetkz@cnt@pair\thetkz@cnt@lg)--%
          node[draw,inner sep =1pt,midway,fill=yellow]%
         {\footnotesize S\thetkz@cnt@pair\thetkz@cnt@lg}%
-         (M\thetkz@cnt@pair\thetkz@cnt@lgnext); 
+         (M\thetkz@cnt@pair\thetkz@cnt@lgnext);
    \stepcounter{tkz@cnt@pair}}%
    \stepcounter{tkz@cnt@cl}%
-   }%  
+   }%
  \else
  \ifTAB@tbs@color%
   \draw(T1\thetkz@cnt@lg) rectangle (T2\thetkz@cnt@line);%
@@ -428,15 +428,15 @@
    \ifthenelse{\isodd{\value{tkz@cnt@cl}}}{%
      \path (N\thetkz@cnt@impair\thetkz@cnt@lg) --%
              coordinate[midway](Z\thetkz@cnt@impair\thetkz@cnt@lg)%
-           (N\thetkz@cnt@impair\thetkz@cnt@lgnext);   
+           (N\thetkz@cnt@impair\thetkz@cnt@lgnext);
       \ifthenelse{\equal{\expandafter\stripspaces\expandafter{\x}}{z}}{%
          \draw[line width = \cmdTAB@tbs@lw,t style]%
               (N\thetkz@cnt@impair\thetkz@cnt@lg) -- %
               (N\thetkz@cnt@impair\thetkz@cnt@lgnext);
-              \node at (Z\thetkz@cnt@impair\thetkz@cnt@lg){$0$}; 
+              \node at (Z\thetkz@cnt@impair\thetkz@cnt@lg){$0$};
               }{%
      \ifthenelse{\equal{\expandafter\stripspaces\expandafter{\x}}{}}{%
-               }{% 
+               }{%
       \ifthenelse{\equal{\expandafter\stripspaces\expandafter{\x}}{t}}{%
          \draw[line width = \cmdTAB@tbs@lw,t style]
               (N\thetkz@cnt@impair\thetkz@cnt@lg) -- %
@@ -447,31 +447,31 @@
          ([yshift = \cmdTAB@tbs@lw/2] N\thetkz@cnt@impair\thetkz@cnt@lgnext);
              }{%
       \path (N\thetkz@cnt@impair\thetkz@cnt@lg)--%
-            (N\thetkz@cnt@impair\thetkz@cnt@lgnext); 
+            (N\thetkz@cnt@impair\thetkz@cnt@lgnext);
             \node at (Z\thetkz@cnt@impair\thetkz@cnt@lg){$\x$};
             }%
        }}}\stepcounter{tkz@cnt@impair}%
      }{%
        \path (M\thetkz@cnt@pair\thetkz@cnt@lg)--%
              coordinate[midway](S\thetkz@cnt@pair\thetkz@cnt@lg)%
-            (M\thetkz@cnt@pair\thetkz@cnt@lgnext);% 
+            (M\thetkz@cnt@pair\thetkz@cnt@lgnext);%
        \ifthenelse{\equal{\expandafter\stripspaces\expandafter{\x}}{h}}{%
           \setcounter{tkz@cnt@clnext}{\thetkz@cnt@pair}%
           \stepcounter{tkz@cnt@clnext}%
           \pgfmathparse{\cmdTAB@TTS@doubledistance/2+\cmdTAB@tbs@lw}
-          \global\let\tkz@deltax\pgfmathresult 
+          \global\let\tkz@deltax\pgfmathresult
           \fill[h style]([xshift=\tkz@deltax,yshift=-\cmdTAB@tbs@lw/2]%
-                                N\thetkz@cnt@pair\thetkz@cnt@lg) 
+                                N\thetkz@cnt@pair\thetkz@cnt@lg)
                           rectangle%
                        ([xshift=-\tkz@deltax,yshift=\cmdTAB@tbs@lw/2]%
                                 N\thetkz@cnt@clnext\thetkz@cnt@lgnext);
 }{%
-          \node at (S\thetkz@cnt@pair\thetkz@cnt@lg) {$\x$}; 
+          \node at (S\thetkz@cnt@pair\thetkz@cnt@lg) {$\x$};
           }%
          \stepcounter{tkz@cnt@pair}%
         }%
    \stepcounter{tkz@cnt@cl}%
-   }% end foreach  
+   }% end foreach
    \fi
   \makeatother
 }%
@@ -491,9 +491,9 @@
     \ifTAB@VA@help%
    \draw[fill=orange] (FR\thetkz@cnt@pred\thetkz@cnt@lg) circle(2pt)%
         node[right,orange] {\footnotesize  FR\thetkz@cnt@pred\thetkz@cnt@lg};
-      \draw[fill=orange]  (FL\thetkz@cnt@cl\thetkz@cnt@lg)circle(2pt)% 
-       node[left,orange] {\footnotesize  FL\thetkz@cnt@cl\thetkz@cnt@lg}; 
-      \else 
+      \draw[fill=orange]  (FL\thetkz@cnt@cl\thetkz@cnt@lg)circle(2pt)%
+       node[left,orange] {\footnotesize  FL\thetkz@cnt@cl\thetkz@cnt@lg};
+      \else
    \draw[arrow style] (FR\thetkz@cnt@pred\thetkz@cnt@lg) to%
                      (FL\thetkz@cnt@cl\thetkz@cnt@lg);%
   \fi
@@ -520,8 +520,8 @@
 \setcounter{tkz@cnt@temp}{0}%
 \setcounter{tkz@cnt@arrow}{0}%
 \pgfmathparse{\cmdTAB@TTS@doubledistance/2+\cmdTAB@tbs@lw}
-\global\let\tkz@deltax\pgfmathresult 
-                   
+\global\let\tkz@deltax\pgfmathresult
+
 \ifTAB@tbs@color%
   \draw (T1\thetkz@cnt@lg) rectangle (T2\thetkz@cnt@line);%
 \fi%
@@ -735,7 +735,7 @@
  \setcounter{tkz@cnt@clnext}{\thetkz@cnt@cl}\stepcounter{tkz@cnt@clnext}
  \fill[h style]%
  ([xshift=\tkz@deltax] N\thetkz@cnt@cl\thetkz@cnt@lg)%
-                          rectangle%  
+                          rectangle%
       (N\thetkz@cnt@clnext\thetkz@cnt@lgnext);
 \ifthenelse{\equal{\thetkz@cnt@arrow}{0}}{}{\tkzDrawArrow}\stepcounter{tkz@cnt@zone}%
 }%
@@ -748,7 +748,7 @@
  \setcounter{tkz@cnt@clnext}{\thetkz@cnt@cl}\stepcounter{tkz@cnt@clnext}%
  \fill[h style]%
  ([xshift=\tkz@deltax] N\thetkz@cnt@cl\thetkz@cnt@lg)%
-                          rectangle%  
+                          rectangle%
       (N\thetkz@cnt@clnext\thetkz@cnt@lgnext);
  \ifthenelse{\equal{\thetkz@cnt@arrow}{0}}{}{\tkzDrawArrow}\stepcounter{tkz@cnt@zone}%
 }%
@@ -770,7 +770,7 @@
 {\setcounter{tkz@cnt@clnext}{\thetkz@cnt@cl}\stepcounter{tkz@cnt@clnext}%
  \fill[h style]%
       ([xshift=\tkz@deltax] N\thetkz@cnt@cl\thetkz@cnt@lg)%
-                          rectangle%  
+                          rectangle%
            (N\thetkz@cnt@clnext\thetkz@cnt@lgnext);
  \draw[double style]%
       ([yshift = -\cmdTAB@tbs@lw/2] N\thetkz@cnt@cl\thetkz@cnt@lg) --%
@@ -819,7 +819,7 @@
 \setkeys[TAB]{VI}{#1}%
 \setcounter{tkz@cnt@lg}{\thetkz@cnt@line}%
 \addtocounter{tkz@cnt@lg}{-1}%
-\pgfextractx{\tkz@XF}{\pgfpointanchor{L#2}{center}} 
+\pgfextractx{\tkz@XF}{\pgfpointanchor{L#2}{center}}
 \pgfextracty{\tkz@YF}{\pgfpointanchor{L#2}{center}}
 \pgfmathparse{\cmdTAB@tbs@espcl * (#4)*(#3-#2)}%
 \global\let\tkz@tab@dx\pgfmathresult
@@ -863,7 +863,7 @@
       first line = {(FR#2\thetkz@cnt@lg)--(FL#3\thetkz@cnt@lg)},%
       second line={(#4)--([yshift=-0.5 cm]#4)}) node[node style,fondT](IMA){#5};
       \path coordinate (\cmdTAB@IM@remember) at (IMA);
-\ifTAB@IM@draw 
+\ifTAB@IM@draw
     \draw[from style] (#4) to (IMA);
 \fi
 }%
@@ -924,7 +924,7 @@
   \node[right = 3pt] at (Z\x 1) {\scriptsize $\z$};
   }%
 }
-%<---------------------------------------------------------------------------> 
+%<--------------------------------------------------------------------------->
 %<--------------------------------------------------------------------------->
 \newcommand*{\tkzTab}[5][]{%
   \tkzTabInit[#1]{#2}{#3}%

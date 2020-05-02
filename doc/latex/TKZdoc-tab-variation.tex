@@ -3,16 +3,16 @@
 
 \begin{NewMacroBox}{tkzTabVar}{\oarg{local options}\var{el($1$),\dots,el($n$)}}
   avec \tkzname{el($i$) = s($i$) / e($i$)} ou bien     \tkzname{el($i$) = s($i$) / eg($i$) / ed($i$)}.
-  
+
 \noindent\tkzname{s($i$)} est une série de symboles à choisir dans le tableau ci-dessous. \tkzname{eg($i$)} et \tkzname{ed($i$)} sont des expressions mathématiques qui se placent à gauche et à droite des filets verticaux. \tkzname{e($i$)} est une expression centrée sur un filet.
 
-\medskip  
+\medskip
  \begin{tabular}{llrl}
-\toprule 
+\toprule
  Groupe 1& \emph{avec un seul signe} &&\\
-\midrule 
+\midrule
 \tkzname{s($i$)}  & Position des expressions & \tkzname{el($i$)}  &      \\
-\midrule                                                                                   
+\midrule
 \IargName{tkzTabVar}{$-~~~$}& expression  unique et centrée en bas  eg=ed   &  $-   $&$/e    $    \\
 \IargName{tkzTabVar}{$+~~~$}& expression  unique et centrée en haut eg=ed   &  $+   $&$/e    $    \\
 \IargName{tkzTabVar}{$~R~~$}& rien, on passe à l'expression  suivante           &  $~R  $&$(/)   $    \\
@@ -30,7 +30,7 @@
 \IargName{tkzTabVar}{$-CH$} & idem mais  expression en bas et à gauche           &  $-CH $&$/e    $    \\
 \midrule
  Groupe 2& \emph{avec deux signes}& &\\
-\midrule 
+\midrule
 \IargName{tkzTabVar}{$+D-$} & discontinuité,\hfill deux expressions    &  $+D- $&$/eg/ed$    \\
 \IargName{tkzTabVar}{$-D+$} & discontinuité, \dots \hfill      qui sont    &  $-D+ $&$/eg/ed$    \\
 \IargName{tkzTabVar}{$+D+$} & discontinuité, \dots \hfill soit  à gauche ,soit à droite &$+D+ $&$/eg/ed$    \\
@@ -48,16 +48,16 @@
 \IargName{tkzTabVar}{$+V-$} & \dots \hfill  soit  à gauche ,soit à droite &  $+V- $&$/eg/ed$    \\
 \IargName{tkzTabVar}{$-V+$} & \dots \hfill   soit en haut, soit en bas    &  $-V+ $&$/eg/ed$    \\
 \midrule
-\tkzname{\textvisiblespace} & laisse la place vide dans certains cas& &   \\ 
+\tkzname{\textvisiblespace} & laisse la place vide dans certains cas& &   \\
 \bottomrule
 \end{tabular}
 
 \medskip
-\noindent\emph{La macro \tkzcname{tkzTabVar} nécessite un argument qui est une liste. Cette liste contient \tkzname{$n$} éléments correspondant aux \tkzname{$n$} antécédents de la première ligne. Chaque élément donne la position d'une ou de deux expressions par rapport à la ligne avec un signe $+$ (en haut) ou bien un signe $-$ (en  bas). Ces expressions sont, soit des images, soit des limites.}       
+\noindent\emph{La macro \tkzcname{tkzTabVar} nécessite un argument qui est une liste. Cette liste contient \tkzname{$n$} éléments correspondant aux \tkzname{$n$} antécédents de la première ligne. Chaque élément donne la position d'une ou de deux expressions par rapport à la ligne avec un signe $+$ (en haut) ou bien un signe $-$ (en  bas). Ces expressions sont, soit des images, soit des limites.}
 
 \noindent\emph{Les éléments \tkzname{el($i$)} ont pour forme~:\\
  soit \mbox{\tkzname{\{ s($i$)/ e($i$)\}}} ou bien \mbox{\tkzname{\{ s($i$)/ e($i$) / \}}}, soit \mbox{\tkzname{\{ s($i$)/ eg($i$) / ed($i$)\}}}.}
- 
+
 \noindent\emph{La première forme correspond aux symboles qui ne possèdent qu'un signe \tkzname{$+$} ou \tkzname{$-$} et qui  placent une seule expression; la seconde correspond aux symboles qui  possèdent deux signes et qui placent deux expressions. Les expressions sont des valeurs prises à gauche \tkzname{ eg($i$)\}} ou bien à droite \tkzname{ed($i$)} par la fonction ou encore des limites mais les expressions peuvent être vides. Un signe \tkzname{$+$} ou  \tkzname{$-$} à gauche (resp. à droite) des symboles correspond à \tkzname{eg($i$)} (resp. à \tkzname{ed($i$)}).}
 
 \medskip
@@ -66,12 +66,12 @@
 \texttt{options}               & \texttt{défaut} & \texttt{définition}              \\
 \midrule
 \IoptName{tkzTabVar}{color}  & |black|         & couleur des flèches                \\
-\IoptName{tkzTabVar}{help}   &  affiche la structure d'une ligne de variations      \\ 
+\IoptName{tkzTabVar}{help}   &  affiche la structure d'une ligne de variations      \\
  \bottomrule
-\end{tabular} 
+\end{tabular}
 
-\end{NewMacroBox}  
-  
+\end{NewMacroBox}
+
  \medskip
 Un schéma étant parfois plus simple qu'un long discours \dots
 
@@ -80,9 +80,9 @@ Un schéma étant parfois plus simple qu'un long discours \dots
 \tkzTabInit[lgt=2,espcl=3]{$x$/1,$f'(x)$/1,$f(x)$/3}%
 {$0$,$1$,$2$,$+\infty$}%
 \tkzTabLine{t,-,d,-,z,+,}%
-\tkzTabVar{}% 
-\node[below =3pt]  (FN12) at (N12){};  
-\node[below =3pt]  (FN22) at (N22){}; 
+\tkzTabVar{}%
+\node[below =3pt]  (FN12) at (N12){};
+\node[below =3pt]  (FN22) at (N22){};
 \node[below =3pt]  (FN32) at (N32){};
 \node[below =3pt]  (FN42) at (N42){};
 
@@ -92,7 +92,7 @@ Un schéma étant parfois plus simple qu'un long discours \dots
 \node[above =3pt]  (FN43) at (N43){};
 
 \node[below right=3pt]  (FRN12) at (N12){};
-\node[below right=3pt]  (FRN22) at (N22){}; 
+\node[below right=3pt]  (FRN22) at (N22){};
 \node[below right=3pt]  (FRN32) at (N32){};
 \node[below right=3pt]  (FRN42) at (N42){};
 
@@ -100,7 +100,7 @@ Un schéma étant parfois plus simple qu'un long discours \dots
 \node[above right=3pt]  (FRN23) at (N23){};
 \node[above right=3pt]  (FRN33) at (N33){};
 
-\node[below left=3pt]  (FLN22) at (N22){}; 
+\node[below left=3pt]  (FLN22) at (N22){};
 \node[below left=3pt]  (FLN32) at (N32){};
 \node[below left=3pt]  (FLN42) at (N42){};
 
@@ -134,7 +134,7 @@ Un schéma étant parfois plus simple qu'un long discours \dots
 \draw[fill=green!50] (FLN43) circle(2pt);
 \end{tikzpicture}
 \end{center}
-                                                       
+
 \medskip
 Pour les besoins de certains tableaux , j'ai employé les macros suivantes~:
 
@@ -143,8 +143,8 @@ Pour les besoins de certains tableaux , j'ai employé les macros suivantes~:
 	\newcommand*{\vb}{\colorbox{blue!50}   {$\scriptscriptstyle V_b$}}
 	\newcommand*{\vbo}{\colorbox{blue!50}  {$\scriptscriptstyle V_{b1}$}}
 	\newcommand*{\vbt}{\colorbox{yellow!50}{$\scriptscriptstyle V_{b2}$}}
-	\newcommand*{\vc}{\colorbox{gray!50}   {$\scriptscriptstyle V_c$}} 
-	\newcommand*{\vd}{\colorbox{magenta!50}{$\scriptscriptstyle V_d$}} 
+	\newcommand*{\vc}{\colorbox{gray!50}   {$\scriptscriptstyle V_c$}}
+	\newcommand*{\vd}{\colorbox{magenta!50}{$\scriptscriptstyle V_d$}}
 	\newcommand*{\ve}{\colorbox{orange!50} {$\scriptscriptstyle V_e$}}
 \end{tkzexample}
 
@@ -165,76 +165,76 @@ Pour les besoins de certains tableaux , j'ai employé les macros suivantes~:
 \tkzTabLine{t,-,d,-,z,+,}%
 	\tkzTabVar{+/\va , -D+/\vb/\vc,-/\vd, +D/\ve}%
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 
-Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité de la flèche en haut ou en bas de la ligne. Ensuite, en présence d'un seul signe, une seule expression est nécessaire. La position par rapport à la colonne est donnée par la position du signe par rapport aux autres symboles (voir \tkzname{$+D$}).  \tkzname{$-D+$} nécessite deux expressions. 
+Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité de la flèche en haut ou en bas de la ligne. Ensuite, en présence d'un seul signe, une seule expression est nécessaire. La position par rapport à la colonne est donnée par la position du signe par rapport aux autres symboles (voir \tkzname{$+D$}).  \tkzname{$-D+$} nécessite deux expressions.
 
 \subsection{Utilisation des symboles}
 
 \medskip
 \bgroup\parindent=0pt
-\begin{minipage}{7cm} 
+\begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {+ /\va , -/\vb }
 \end{tkzexample}
   \begin{tikzpicture}
   \tkzTabInit[lgt=1]{ /0.5,/2 }{ a , b }
-  \tkzTabVar% 
-  {+ /\va , -/\vb }  
+  \tkzTabVar%
+  {+ /\va , -/\vb }
   \end{tikzpicture}
 \end{minipage}
-\hfill 
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {-/\va   ,   +/\vb}
 \end{tkzexample}
   \begin{tikzpicture}
   \tkzTabInit[lgt=1]{ /0.5,/2 }{ a , b }
-  \tkzTabVar% 
-{-/\va   ,   +/\vb} 
+  \tkzTabVar%
+{-/\va   ,   +/\vb}
   \end{tikzpicture}
 \end{minipage}
 
-\begin{minipage}{7cm} 
+\begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {+/\va   ,   +/\vb}
 \end{tkzexample}
   \begin{tikzpicture}
   \tkzTabInit[lgt=1]{ /0.5,/2 }{ a , b }
-  \tkzTabVar% 
-{+/\va   ,   +/\vb}   
+  \tkzTabVar%
+{+/\va   ,   +/\vb}
   \end{tikzpicture}
 \end{minipage}
-\hfill 
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {-/\va   ,   -/\vb}
 \end{tkzexample}
   \begin{tikzpicture}
   \tkzTabInit[lgt=1]{ /0.5,/2 }{ a , b }
-  \tkzTabVar% 
-{-/\va   ,   -/\vb}   
+  \tkzTabVar%
+{-/\va   ,   -/\vb}
   \end{tikzpicture}
 \end{minipage}
 
-\begin{minipage}{7cm} 
+\begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {+/\va  , -C / \vb}
 \end{tkzexample}
   \begin{tikzpicture}
   \tkzTabInit[lgt=1]{ /0.5,/2 }{ a , b }
-  \tkzTabVar% 
-{+/\va  , -C / \vb}  
+  \tkzTabVar%
+{+/\va  , -C / \vb}
   \end{tikzpicture}
 \end{minipage}
-\hfill 
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
 {-/\va  , +C / \vb }\end{tkzexample}
   \begin{tikzpicture}
   \tkzTabInit[lgt=1]{ /0.5,/2 }{ a , b }
-  \tkzTabVar% 
-{-/\va  , +C / \vb }   
+  \tkzTabVar%
+{-/\va  , +C / \vb }
   \end{tikzpicture}
 \end{minipage}
 
@@ -244,63 +244,63 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
   \tkzTabInit[lgt=1]{ /0.5,/2 }{ a , b }
-   \tkzTabVar% 
- {+C  / \va ,  -C / \vb } 
+   \tkzTabVar%
+ {+C  / \va ,  -C / \vb }
 \end{tikzpicture}
-\end{minipage}  
-\hfill 
+\end{minipage}
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {-C /\va  , +C /\vb}
 \end{tkzexample}
 \begin{tikzpicture}
   \tkzTabInit[lgt=1]{ /0.5,/2 }{ a , b }
-     \tkzTabVar% 
- {-C /\va  , +C /\vb}  
+     \tkzTabVar%
+ {-C /\va  , +C /\vb}
 \end{tikzpicture}
-\end{minipage}  
+\end{minipage}
 
-\begin{minipage}{7cm} 
+\begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  { D+  /\va  ,  -/\vb}
 \end{tkzexample}
   \begin{tikzpicture}
   \tkzTabInit[lgt=1]{ /0.5,/2 }{ a , b }
-  \tkzTabVar% 
- { D+  /\va  ,  -/\vb}  
+  \tkzTabVar%
+ { D+  /\va  ,  -/\vb}
   \end{tikzpicture}
 \end{minipage}
-\hfill 
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
- { D-  /\va  ,  +/\vb} 
+ { D-  /\va  ,  +/\vb}
 \end{tkzexample}
   \begin{tikzpicture}
   \tkzTabInit[lgt=1]{ /0.5,/2 }{ a , b }
   \tkzTabVar
-  { D-  /\va  ,  +/\vb}  
+  { D-  /\va  ,  +/\vb}
   \end{tikzpicture}
 \end{minipage}
 
-\begin{minipage}{7cm} 
+\begin{minipage}{7cm}
 \begin{tkzexample}[code only]
- {+/\va  , -D / \vb} 
+ {+/\va  , -D / \vb}
 \end{tkzexample}
   \begin{tikzpicture}
   \tkzTabInit[lgt=1]{ /0.5,/2 }{ a , b }
-  \tkzTabVar% 
-{+/\va  , -D / \vb}  
+  \tkzTabVar%
+{+/\va  , -D / \vb}
   \end{tikzpicture}
 \end{minipage}
-\hfill 
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {-/\va  , +D / \vb }
 \end{tkzexample}
   \begin{tikzpicture}
   \tkzTabInit[lgt=1]{ /0.5,/2 }{ a , b }
-  \tkzTabVar% 
-{-/\va  , +D / \vb }   
+  \tkzTabVar%
+{-/\va  , +D / \vb }
   \end{tikzpicture}
 \end{minipage}
 
@@ -310,21 +310,21 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
   \tkzTabInit[lgt=1]{ /0.5,/2 }{ a , b }
-   \tkzTabVar% 
- {D+  / \va ,  -D / \vb } 
+   \tkzTabVar%
+ {D+  / \va ,  -D / \vb }
 \end{tikzpicture}
-\end{minipage}  
-\hfill 
+\end{minipage}
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {D- /\va , +D /\vb}
 \end{tkzexample}
 \begin{tikzpicture}
   \tkzTabInit[lgt=1]{ /0.5,/2 }{ a , b }
-     \tkzTabVar% 
- {D- /\va  , +D /\vb}  
+     \tkzTabVar%
+ {D- /\va  , +D /\vb}
 \end{tikzpicture}
-\end{minipage}  
+\end{minipage}
 
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
@@ -332,19 +332,19 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar  {+/ \va , -/  \vb ,+/  \vc} 
+\tkzTabVar  {+/ \va , -/  \vb ,+/  \vc}
 \end{tikzpicture}
-\end{minipage}   
-\hfill 
+\end{minipage}
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {+/ \va ,-C/ \vb , +/  \vc/ }
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar {+/ \va  ,-C/ \vb , +/  \vc/ } 
+\tkzTabVar {+/ \va  ,-C/ \vb , +/  \vc/ }
 \end{tikzpicture}
-\end{minipage} 
+\end{minipage}
 
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
@@ -352,21 +352,21 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar% 
-{-  /\va  ,  R,  +/\vc}     
+\tkzTabVar%
+{-  /\va  ,  R,  +/\vc}
 \end{tikzpicture}
-\end{minipage}   
-\hfill 
+\end{minipage}
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {-  /\va , R , +/\vc}
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2}{ a , b , c }
-\tkzTabVar% 
-{-  /\va  ,  R  ,  +/\vc}  
+\tkzTabVar%
+{-  /\va  ,  R  ,  +/\vc}
 \end{tikzpicture}
-\end{minipage} 
+\end{minipage}
 
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
@@ -374,21 +374,21 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar% 
-{D-/\va  ,  +DH/\vbo/ ,  }     
+\tkzTabVar%
+{D-/\va  ,  +DH/\vbo/ ,  }
 \end{tikzpicture}
-\end{minipage}   
-\hfill 
+\end{minipage}
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {D-/\va  , -DH/\va/\vb ,  D+/}
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar% 
-{D-/\va  ,  -DH/\vbo ,  D+/}  
+\tkzTabVar%
+{D-/\va  ,  -DH/\vbo ,  D+/}
 \end{tikzpicture}
-\end{minipage} 
+\end{minipage}
 
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
@@ -396,21 +396,21 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar% 
-{D-/\va  ,  +D-/\vbo/\vbt , +D/\vc}     
+\tkzTabVar%
+{D-/\va  ,  +D-/\vbo/\vbt , +D/\vc}
 \end{tikzpicture}
-\end{minipage}   
-\hfill 
+\end{minipage}
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {D-/\va , +D-/\vbo/\vbt , +D/\vc}
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar% 
-{D-/\va  ,  -D-/\vbo/\vbt , +D/\vc}  
+\tkzTabVar%
+{D-/\va  ,  -D-/\vbo/\vbt , +D/\vc}
 \end{tikzpicture}
-\end{minipage} 
+\end{minipage}
 
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
@@ -418,39 +418,39 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar  {+/ \va , -D- /\vbo/\vbt,+/\vc  } 
+\tkzTabVar  {+/ \va , -D- /\vbo/\vbt,+/\vc  }
 \end{tikzpicture}
-\end{minipage} 
-\hfill 
+\end{minipage}
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {+ /\va,-DC- /\vbo/\vbt,+ /\vc}
 \end{tkzexample}
 \begin{tikzpicture}\tikzset{low/.style   = {above  =  15pt}}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar {+   /\va ,-DC- /\vbo/\vbt  ,+ /\vc} 
+\tkzTabVar {+   /\va ,-DC- /\vbo/\vbt  ,+ /\vc}
 \end{tikzpicture}
-\end{minipage}  
+\end{minipage}
 
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {D-/\va, +DC-/\vbo/\vbt, +D/\vc}
-\end{tkzexample} 
+\end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar% 
-{D-/\va  ,  +DC-/\vbo/\vbt ,+D/\vc} 
+\tkzTabVar%
+{D-/\va  ,  +DC-/\vbo/\vbt ,+D/\vc}
 \end{tikzpicture}
 \end{minipage}
-\hfill 
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {D+/\va , +DC-/\vbo/\vbt , +D/\vc}
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar% 
-{D+/\va  ,  +DC-/\vbo/\vbt ,+D/\vc}  
+\tkzTabVar%
+{D+/\va  ,  +DC-/\vbo/\vbt ,+D/\vc}
 \end{tikzpicture}
 \end{minipage}
 
@@ -460,19 +460,19 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar% 
-{D-/\va  ,  +CD-/\vbo/\vbt , +D/\vc} 
+\tkzTabVar%
+{D-/\va  ,  +CD-/\vbo/\vbt , +D/\vc}
 \end{tikzpicture}
 \end{minipage}
-\hfill 
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {D-/\va , +CD-/\vbo/\vbt ,+D/\vc}
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar% 
-{D+/\va , +CD-/\vbo/\vbt ,  +D/\vc}  
+\tkzTabVar%
+{D+/\va , +CD-/\vbo/\vbt ,  +D/\vc}
 \end{tikzpicture}
 \end{minipage}
 
@@ -482,18 +482,18 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar  {+ /\va ,-DC+ /\vbo/\vbt , -/\vc} 
+\tkzTabVar  {+ /\va ,-DC+ /\vbo/\vbt , -/\vc}
 \end{tikzpicture}
-\end{minipage} 
-\hfill 
+\end{minipage}
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {D- /\va, -DC- /\vbo/\vbt,+D/\vc}
 \end{tkzexample}
 \begin{tikzpicture}\tikzset{low/.style           = {above       =  15pt}}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar% 
-{D- /\va  , -DC- /\vbo/\vbt , +D/\vc}   
+\tkzTabVar%
+{D- /\va  , -DC- /\vbo/\vbt , +D/\vc}
 \end{tikzpicture}
 \end{minipage}
 
@@ -503,8 +503,8 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar% 
-{+/\va  , -CH /\vbo/\vbt , D+/}  
+\tkzTabVar%
+{+/\va  , -CH /\vbo/\vbt , D+/}
 \end{tikzpicture}
 \end{minipage}
 \hfill
@@ -514,8 +514,8 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar% 
-{+  /\va  , -CH/\vb,  //}  
+\tkzTabVar%
+{+  /\va  , -CH/\vb,  //}
 \end{tikzpicture}
 \end{minipage}
 
@@ -525,19 +525,19 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar  {+/\va,-V- /\vbo /\vbt, +/\vc} 
+\tkzTabVar  {+/\va,-V- /\vbo /\vbt, +/\vc}
 \end{tikzpicture}
-\end{minipage} 
-\hfill 
+\end{minipage}
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {+/ \va ,-V+ / \vbo/ \vbt ,-/ \vc}
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar  {+/ \va ,-V+ / \vbo/ \vbt ,-/ \vc}   
+\tkzTabVar  {+/ \va ,-V+ / \vbo/ \vbt ,-/ \vc}
 \end{tikzpicture}
-\end{minipage} 
+\end{minipage}
 
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
@@ -545,19 +545,19 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar  {+/ \va ,+V- / \vbo/ \vbt , -/\vc} 
+\tkzTabVar  {+/ \va ,+V- / \vbo/ \vbt , -/\vc}
 \end{tikzpicture}
-\end{minipage}   
-\hfill 
+\end{minipage}
+\hfill
 \begin{minipage}{7cm}
 \begin{tkzexample}[code only]
  {-/ \va, +V+ / \vbo/\vbt, -/\vc}
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=2.5]{ /0.5,/2 }{ a , b , c }
-\tkzTabVar  {-/ \va ,+V+ / \vbo / \vbt, -/\vc}   
+\tkzTabVar  {-/ \va ,+V+ / \vbo / \vbt, -/\vc}
 \end{tikzpicture}
-\end{minipage} 
+\end{minipage}
 
 \begin{minipage}{16cm}
 \begin{tkzexample}[code only]
@@ -565,7 +565,7 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=3]{ /0.5,/2 }{ a , b , c , d }
-\tkzTabVar  {-/  \va  ,+H/\vb,-/\vc, +/  \vd}   
+\tkzTabVar  {-/  \va  ,+H/\vb,-/\vc, +/  \vd}
 \end{tikzpicture}
 \end{minipage}
 
@@ -575,7 +575,7 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=3]{ /0.5,/2 }{ a , b , c , d }
-\tkzTabVar  {+/  \va  ,-H/\vb,-/\vc, +/  \vd}   
+\tkzTabVar  {+/  \va  ,-H/\vb,-/\vc, +/  \vd}
 \end{tikzpicture}
 \end{minipage}
 
@@ -585,7 +585,7 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=3]{ /0.5,/2 }{ a , b , c , d , e}
-\tkzTabVar  {-/  \va  ,R,R,R, +/  \ve}   
+\tkzTabVar  {-/  \va  ,R,R,R, +/  \ve}
 \end{tikzpicture}
 \end{minipage}
 
@@ -595,9 +595,9 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
  \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=3]{ /0.5,/2 }{ a , b , c , d , e}
-\tkzTabVar  {-/ \va  ,+/\vb ,-DH/\vc,-/\vd, +/ \ve}   
+\tkzTabVar  {-/ \va  ,+/\vb ,-DH/\vc,-/\vd, +/ \ve}
 \end{tikzpicture}
-\end{minipage} 
+\end{minipage}
 
 \begin{minipage}{16cm}
 \begin{tkzexample}[code only]
@@ -605,7 +605,7 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 \end{tkzexample}
 \begin{tikzpicture}
 \tkzTabInit[lgt=1,espcl=3]{ /0.5,/2 }{ a , b , c , d , e}
-\tkzTabVar  {D-/  \va ,+DH/\vb/,D-/\vc,+/\vd, -D/\ve}   
+\tkzTabVar  {D-/  \va ,+DH/\vb/,D-/\vc,+/\vd, -D/\ve}
 \end{tikzpicture}
 \end{minipage}
 \egroup
@@ -614,9 +614,9 @@ Commentaires : Les signes $+$ et $-$ permettent de positionner une extrémité d
 Commentaires
 \begin{itemize}
   \item on peut employer la syntaxe suivante dans pratiquement tous les cas $s(i)/\ldots/\ldots$ mais alors il faut bien positionner les expressions;
-  
+
   \item l'argument vide est employé parfois à la fin d'une ligne mais dans ce cas aucune flèche n'est tracée;
-  
+
   \item $C+$ et $C-$ n'existent pas. $+C$ et $-C$ suffisent car les expressions sont centrées;
   \item  $D+$ et $D-$ existent .
 
@@ -638,19 +638,19 @@ Il est possible de personnaliser le tableau à l'aide de styles.
   \tkzTabVar[color=red]%
     {D-/    /  $-\infty$,+/  $+\infty$  /}
 \end{tikzpicture}
-\end{tkzexample} 
- 
-\subsubsection{\texttt{\textcolor{red}{help}} : affiche la structure du tableau} 
-\Iopt{tkzTabVar}{help}   
+\end{tkzexample}
+
+\subsubsection{\texttt{\textcolor{red}{help}} : affiche la structure du tableau}
+\Iopt{tkzTabVar}{help}
 Voir le chapitre personnalisation (\ref{pers})
 \subsection{Utilisation des styles}
- 
+
 \subsubsection{Modification de la couleur d'une zone interdite}
 \Istyle{tkzTabvar}{h style}
-Si vous préférez hachurer une zone du tableau, alors  il faut modifier un style. 
+Si vous préférez hachurer une zone du tableau, alors  il faut modifier un style.
 
 Par défaut, \tkzname{h style}  est défini ainsi:
-\begin{tkzexample}[code only] 
+\begin{tkzexample}[code only]
  \tikzset{h style/.style = {fill=gray,opacity=0.4}}
 \end{tkzexample}
 
@@ -666,16 +666,16 @@ Une autre définition peut être :
  \tkzTabInit[lgt=1,espcl=2]{$x$ /1,  $f$ /2}{$0$,$1$,$2$,$3$}%
  \tkzTabVar{+/ $1$  / , -CH/ $-2$ / , +C/  $5$, -/ $0$  /  }
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 
 \subsubsection{\texttt{\textcolor{red}{h style}} Zone interdite hachurée}
 \Istyle{tkzTabVar}{h style}
 
 \begin{tkzexample}[code only]
-  \tikzset{h style/.style = {pattern=north west lines}} 
+  \tikzset{h style/.style = {pattern=north west lines}}
 \end{tkzexample}
  Ce code permet d'hachurer la zone
- 
+
 \begin{tkzexample}[vbox,width=9cm,small]
 \begin{tikzpicture}
  \tikzset{h style/.style = {pattern=north west lines}}
@@ -686,7 +686,7 @@ Une autre définition peut être :
 
 
 \subsubsection{\texttt{\textcolor{red}{arrow style}} style des flèches.}
-\Istyle{tkzTabVar}{arrow} 
+\Istyle{tkzTabVar}{arrow}
 Le style des flèches est \tkzname{arrow style} et il est défini ainsi :
 
 \begin{tkzexample}[code only]
@@ -706,16 +706,16 @@ Le style des flèches est \tkzname{arrow style} et il est défini ainsi :
                                    shorten >   =  6pt,
                                    shorten <   =  6pt}}
 \end{tkzexample}
- 
+
  La couleur et l'approche des flèches sont modifiées.
- 
+
 \begin{tkzexample}[vbox,small]
 \begin{tikzpicture}
   \tikzset{arrow style/.style   = {blue,
                                    ->,
                                    >           = latex',
                                    shorten >   =  6pt,
-                                   shorten <   =  6pt}}  
+                                   shorten <   =  6pt}}
   \tkzTabInit[espcl=5]{$x$ /1, $\ln x +1$ /1.5, $x \ln x$ /2}%
      {$0$ ,$1/\E$ , $+\infty$}%
   \tkzTabLine{d,-,z,+,}
@@ -727,18 +727,18 @@ Le style des flèches est \tkzname{arrow style} et il est défini ainsi :
 \end{tkzexample}
 
 \subsubsection{\texttt{\textcolor{red}{node style}} Style des nodes}
-\Istyle{tkzTabVar}{node style} 
-Par défaut, Le style des nodes est \tkzname{node style} et il est défini ainsi : 
-\begin{tkzexample}[code only]  
+\Istyle{tkzTabVar}{node style}
+Par défaut, Le style des nodes est \tkzname{node style} et il est défini ainsi :
+\begin{tkzexample}[code only]
 \tikzset{node style/.style    = {inner sep   =  2pt,
                                  outer sep   =  2pt,
                                  fill        =  \cmdTAB@tbs@colorT}}\end{tkzexample}
 Si on veut apporter des modifications mais conserver une partie de ce style, on peut agir ainsi :
 
-\begin{tkzexample}[code only]  
+\begin{tkzexample}[code only]
   \tikzset{node style/.append style = {draw,circle,fill=red!40,opacity=.4}}
 \end{tkzexample}
- 
+
  Par défaut les nodes sont des rectangles non tracés, ils deviennent des disques
 
 \begin{tikzpicture}
@@ -750,8 +750,8 @@ Si on veut apporter des modifications mais conserver une partie de ce style, on 
   { D+/   / $0$ ,%
      -/ \colorbox{black}{\textcolor{white}{$\dfrac{-1}{e}$}}/ ,%
      +/ $+\infty$  /  }%
-\end{tikzpicture}   
-                               
+\end{tikzpicture}
+
 \begin{tkzexample}[code only,small]
 \begin{tikzpicture}
   	\tikzset{node style/.append style    = {draw,circle,fill=red!40,opacity=.4}}
@@ -763,17 +763,17 @@ Si on veut apporter des modifications mais conserver une partie de ce style, on 
      -/ \colorbox{black}{\textcolor{white}{$\dfrac{-1}{e}$}}/ ,%
      +/ $+\infty$  /  }%
 \end{tikzpicture}
-\end{tkzexample}  
+\end{tkzexample}
 
 \subsection{Quelques exemples}
 \subsubsection{Fonction inverse}
-Étude de la fonction inverse $i~:~ x \longmapsto \frac{1}{x}$ sur $]-\infty~;~0[ \cup ]0~;~+\infty[$ 
+Étude de la fonction inverse $i~:~ x \longmapsto \frac{1}{x}$ sur $]-\infty~;~0[ \cup ]0~;~+\infty[$
 
 
 \begin{tkzexample}[vbox,small]
 \begin{tikzpicture}
   \tkzTabInit[lgt=1.5,espcl=6.5]{$x$  /1,$i'(x)$  /1,$i$ /3}
-                            {$-\infty$,$0$,$+\infty$}% 
+                            {$-\infty$,$0$,$+\infty$}%
   \tkzTabLine{,-,d,-,}
   \tkzTabVar{+/   $0$ /  ,-D+/ $-\infty$ / $+\infty$ , -/ $0$ /}
 \end{tikzpicture}
@@ -810,7 +810,7 @@ Il est possible avec R de passer plusieurs valeurs.
 \end{tkzexample}
 
 \subsubsection{Zone interdite + double prolongement par continuité}
-\index{prolongement par continuité} 
+\index{prolongement par continuité}
 \begin{tkzexample}[vbox]
 \begin{tikzpicture}
  \tkzTabInit[lgt=1,espcl=2]{$x$ /1,  $f$ /2}{$0$,$1$,$2$,$3$}%
@@ -845,7 +845,7 @@ Utilisation de l'option nocadre qui supprime le cadre extérieur, sinon on peut 
  \tkzTabVar {D-/   /$1$,+/ $\E$ /,-/  $0$ /}%
  \tkzTabVar {D-/    /$-\infty$ ,R/    $0$   /, +/   $+8$ /}
 \end{tikzpicture}
-\end{tkzexample} 
+\end{tkzexample}
 
 
 

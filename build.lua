@@ -1,8 +1,8 @@
 -- Build script for tkz-tab
 
 module = "tkz-tab"
-tkztabv = "2.1c"
-tkztabd = "2020/04/10"
+tkztabv = "2.12c"
+tkztabd = "2020/04/29"
 
 -- Setting variables for .zip file (CTAN)
 textfiles  = {"README.md"}
